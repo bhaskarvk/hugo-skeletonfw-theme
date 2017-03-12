@@ -1,0 +1,18 @@
+<li class="post-item">
+    <h5>
+    <div class="meta">{{ .Date.Format .Site.Params.DateForm }}</div>
+    </h5><h4>
+    <div class="title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ if .Params.lang }}
+            <small title="Language: {{ .Params.lang }}">({{ .Params.lang }})</small>
+        {{ end }}
+    </div></h4>
+    <div class="summary">
+      {{ .Summary }}
+      <div class="read-more-link">
+      <a href="{{ .RelPermalink }}">Read More…</a>
+      </div>
+    </div>
+    <hr class="list-break"/>
+</li>

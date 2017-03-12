@@ -1,0 +1,486 @@
+/* #### Comment Conventions ####
+*
+* #### READ ME CAREFULLY ####
+* ==== Major Sections ====
+* ---- Minor Sections ----
+*
+*/
+
+
+
+/* #### Based on skeleton-plus ####
+* This style is intended to customize skeleton-plus style.
+* So it doens't have styling of all parts, for that see skeleton-plus.css
+*/
+
+
+/*
+* #### Mobile Fist Approach ####
+* - Define Defaults for smallest screen size
+* - Use Media query to adapt to incrementing screen sizes
+*/
+
+/*
+* ==== Typography ====
+* Change the @import line to your preferred typography file
+* - font-mplus
+* - font-open-sans
+* - font-ralway
+* - font-roboto
+*/
+@import url('font-roboto.css');
+
+/*
+* ==== Colors ====
+* As CSS doesn't allow constants, this section is
+* just comments for easy search and replace.
+*
+* - background  #fcfcfc
+* - headers     #666666
+* - code        #990000
+* - link        #1eaedb
+* - content bg  #fcfcfc
+* - content fg  #5a5a5a
+* - content bor #a9b7c6
+* - meta        #a6a6a6
+* - link hover  #
+* -
+*/
+
+
+/* ==== Major HTML Components ==== */
+
+
+  /* Older browsers */
+html {
+    font-size: 16px;
+}
+  /* Modern browsers only need this one */
+
+ @media screen and (min-width: 25em) {
+    html {
+        font-size: calc(16px + (24 - 16) * (100vw - 350px) / (1200 - 350));
+    }
+ }
+
+body {
+    background-color: #fcfcfc;
+    font-weight: 300;
+    line-height: 1.45; /* fallback value. */
+    line-height: calc(1.30em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)));
+    font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #666666;
+    margin-bottom: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+h1 { font-size: 2.0rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1.0rem; }
+h6 { font-size: 1.0rem; }
+
+pre {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+code {
+    border: 0;
+    color: #900;
+    font-size: 0.85rem;
+    padding: 0.1rem 0.3rem;
+    hyphens: none;
+}
+
+pre>code {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    white-space: pre-wrap !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+ blockquote {
+    color: #900;
+    margin-right: 5px;
+    margin-left: 10px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+blockquote footer cite:before {
+    content: "—&nbsp;";
+}
+
+/* ==== Hugo Theme Components ==== */
+
+/* Use wider container for mobile devices */
+.container {
+    padding: 0;
+    width: 98%;
+}
+
+/* ---- Sections ---- */
+section.header {
+    margin: 1rem 0 0;
+    text-align: center;
+}
+section.header ul li {
+    display: inline;
+    margin-right: 0.25rem;
+}
+section.header ul li .button {
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+section.header ul a {
+    color: #666666;
+    font-size: 0.6rem;
+}
+section.header ul a:hover {
+    background-color: #ddd;
+}
+section.copyright {
+    font-size: 0.7rem;
+    margin-top: 2rem;;
+    text-align: center;
+}
+section.icons {
+    padding: 0.5rem 0.25rem;
+}
+section.icons a {
+    font-size: 0.8rem;
+    color: #666666;
+}
+section.icons a:hover {
+    color: #33c3f0;
+}
+
+/* ---- Anything that needs a box ---- */
+.content {
+    padding: 0.1rem;
+    margin: 0 0 1rem;
+    background-color: #fcfcfc;
+    color: #5a5a5a;
+    border: solid #a9b7c6 1px;
+    border-radius: 2px;
+}
+.content img {
+    max-width: 100%;
+}
+.content .meta {
+    color: #a6a6a6;
+    margin-bottom: 1px;
+    font-style: italic;
+}
+
+/* ---- Headers for Posts/Post-Lists ---- */
+.header .name,
+.header nav {
+    text-transform: uppercase;
+}
+
+/* ---- List of Posts ---- */
+.post-list {
+    list-style: none;
+    display: list-item;
+    align-items: center;
+}
+.post-list .middot {
+    padding: 0 15px 0 15px;
+}
+.post-list hr.list-break {
+    width:50%;
+    margin-top:0.5rem;
+    margin-bottom:1rem;
+    text-align:center;
+}
+.post-item .meta {
+    float: left;
+    width: 10rem;
+    text-align: right;
+    margin-right: 0.5rem;
+}
+.post-item .title {
+    margin-bottom: 0.5rem;
+}
+.post-item .title a {
+    color: #7a7a7a;
+}
+.post-item .title a:hover {
+    color: #1eaedb;
+}
+.post-item .summary p {
+    margin-bottom: 2px;
+}
+.post-item .read-more-link {
+    font-weight: 400;
+}
+
+/* ---- Post Contents ---- */
+div.title-container p#tags {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+div.title-container p#tags a {
+    /*background-color: #ccc;*/
+    border: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: #5c5c5c;
+    color: #111;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: small;
+    text-transform: capitalize;
+    white-space: nowrap !important;
+    line-height: 2rem;
+}
+div.title-container p#tags a:hover {
+    background-color: #1eaedb;
+    color: #fff;
+    border-color: #1eaedb;
+}
+div.page-content ul {
+    margin-bottom: 2px;
+    list-style-position: outside;
+    padding-left: 1rem;
+}
+div.page-content ul li {
+    margin-bottom: 5px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+div.page-content ul li pre {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+div.page-content ul li p {
+    display: inline;
+}
+div.page-content ul li ul {
+    margin: 5px;
+    font-size: 95%;
+}
+section.content p {
+    margin-bottom: 1rem;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* ---- Navigation and Pagination ---- */
+.pagination {
+    display: inline;
+    margin: 0;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 3px 12px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+.pagination a.disabled {
+    background-color: #f3f3f3;
+    color: #aaa;
+    pointer-events: none;
+}
+.pagination a:hover {
+    background-color: #33C3F0;
+    color: white;
+    border: 1px solid #f3f3f3;
+}
+.pager {
+    margin: 0 0 1rem;
+}
+nav ul {
+    float: inherit;
+    margin-bottom: 0.5rem;
+}
+/* Hide text and display only icons for mobile devices */
+nav a.button span.text {
+    display: none;
+}
+.pager a.button span.text {
+    display: none;
+}
+span.page-numbers {
+    display: none;
+}
+
+/* ---- blazy customization ---- */
+.b-lazy {
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
+}
+.b-lazy.b-loaded {
+    opacity: 1;
+    border: 0px;
+}
+
+/* Using "!important" for floating/fixed stuff */
+
+/* ---- Back to Top Button ---- */
+#back-to-top {
+    display: none; /* Hidden on mobile devices */
+    position: fixed !important;
+    bottom: 0px !important;
+    right: 12px !important;
+    padding: 0px !important;
+    font-size: 0.8rem !important;
+    color: #666 !important;
+}
+#back-to-top:hover {
+    color: #1eaedb !important;
+}
+
+/* ---- Table of Contents ---- */
+/*
+.table-of-contents is the Container
+*/
+.table-of-contents {
+    text-transform: capitalize;
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+}
+.table-of-contents strong {
+    font-size: 1.1rem;
+    display: block;
+    background-color: #E1E1E1;
+    color: #111;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+/*
+TableOfContents is the child "nav" element
+*/
+#TableOfContents {
+    overflow: hidden;
+}
+#TableOfContents ul {
+    padding: 0;
+    margin: 0;
+    list-style: none !important;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+#TableOfContents li {
+    margin:0;
+    padding: 0;
+    padding-left: 10px;
+}
+#TableOfContents li ul { /* Nested Levels */
+    font-size: 0.8rem;
+}
+#TableOfContents li a {
+    display: block;
+    text-decoration: none !important;
+    color: #000;
+}
+#TableOfContents li a {
+    padding-left: 100%;
+    margin-left: -100%;
+}
+
+#TableOfContents li a:hover,
+#TableOfContents li a:active,
+#TableOfContents li a.active {
+    background-color: #33c3f0;
+    color: #fcfcfc;
+}
+.table-of-contents hr {
+    border-top:3px solid #E1E1E1 !important;
+    margin:0 !important;
+}
+.table-of-contents hr.top {
+    margin-bottom:10px !important;
+}
+.table-of-contents hr.bottom {
+    margin-top:10px !important;
+}
+
+/* ---- Other Misc. Stuff ---- */
+.button .fa {
+    vertical-align: sub;
+}
+
+.u-pull-right {
+    float: right !important;
+}
+
+/*
+* ==== Media Queries ====
+* Adapt to increasing screen sizes
+*/
+
+ @media only screen and (min-width: 600px) {
+    html {
+        font-size: calc(14px + (24 - 16) * (100vw - 350px) / (1200 - 350));
+    }
+ }
+
+@media only screen and (min-width: 750px) {
+
+    nav a.button span.text {
+        display: inline;
+    }
+
+    .pager a.button {
+        font-size: 0.5rem !important;
+    }
+    .pager a.button span.text {
+        display: inline;
+    }
+
+    .container {
+        width: 90%;
+        /* contract the content a bit */
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+
+    html {
+        font-size: calc(12px + (22 - 16) * (100vw - 350px) / (1200 - 350));
+    }
+    body {
+        line-height: calc(1.20em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)));
+    }
+
+    .table-of-contents {
+        float: right !important;
+        width: 20vw !important;
+        margin-left: 1em !important;
+        position: fixed;
+        left: 0px;
+        top: 20vh;
+    }
+    .container {
+        width: 70vw;
+        margin-left: 25vw; /* contract the container even more */
+    }
+}

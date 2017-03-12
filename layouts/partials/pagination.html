@@ -1,0 +1,29 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="text-center">
+    <div class="pagination row">
+        <div class="twelve columns columns-sm">
+            {{ with $pag.First }}
+                <a {{ if not $pag.HasPrev }}class="disabled"{{ end }}
+                    href="{{ .URL }}" aria-label="First">
+                    <i class="fa fa-angle-double-left fa-2x" aria-hidden="true"></i>
+                </a>
+            {{ end }}
+            <a {{ if not $pag.HasPrev }}class="disabled"{{ end }}
+                href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" aria-label="Previous">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
+            </a>
+            {{ with $pag.Last }}
+                <a class="u-pull-right{{ if not $pag.HasNext }} disabled{{ end }}"
+                    href="{{ .URL }}" aria-label="Last">
+                    <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                </a>
+            {{ end }}
+           <a class="u-pull-right{{ if not $pag.HasNext }} disabled{{ end }}"
+                href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+{{ end }}

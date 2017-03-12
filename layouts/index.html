@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+{{ $paginator := .Paginate (where .Data.Pages "Section" "posts") 5 }}
+<section class="row content">
+    <div class="columns twelve">
+        <ul class="post-list">
+        {{ range $paginator.Pages }}
+           {{ partial "li.html" . }}
+        {{ end }}
+        </ul>
+    </div>
+</section>
+<section class="row pager">
+{{ partial "pagination.html" . }}
+</section>
+{{ partial "footer.html" . }}

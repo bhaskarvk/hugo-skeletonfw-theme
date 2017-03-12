@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+<a data-balloon="Back to Top" data-balloon-pos="left" id="back-to-top"><i class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></a>
+
+<body lang="{{ .Site.LanguageCode }}">
+    <div class="container">
+        <section class="header row">
+            <div class="columns twelve">
+                <h1>
+                    <div class="name">{{ .Site.Title }}</div>
+                </h1>
+                <nav>
+                    <ul>
+                        {{range .Site.Menus.main.ByWeight }}
+                        <li><a class="button" href="{{.URL}}">{{.Pre}}<span class="text">&nbsp;{{.Name}}</span></a></li>
+                        {{end}}
+                    </ul>
+                </nav>
+            </div>
+        </section>

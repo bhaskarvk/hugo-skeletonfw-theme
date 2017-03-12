@@ -1,0 +1,46 @@
+{{ partial "header.html" . }}
+{{ $baseURL := .Site.BaseURL }}
+</section>
+<section class="row content">
+    <div class="columns twelve">
+        <div class="title-container">
+            {{ partial "page-heading" . }}
+            <p class="meta">&nbsp;<i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.DateFormFull }}</p>
+            <p id="tags"><small>Tags: </small>
+                {{ range .Params.tags }}
+                    <a class="tag-button" href="{{ $baseURL }}/tags/{{ . | urlize }}">{{ . }}</a>
+                {{ end }}
+            </p>
+            <hr/>
+        </div>
+        {{ if isset .Params "showtoc" }}
+        <div id="toc" class="table-of-contents">
+            <strong>Table of Contents</strong>
+            <hr class="top"/>
+            {{ .TableOfContents }}
+            <hr class="bottom"/>
+        </div>
+        {{ end }}
+        <div class="page-content">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+
+<div class="row pager">
+    <div class="twelve columns">
+        {{with .Prev}}
+        <a data-balloon="Previous Post" data-balloon-pos="right" class="button button-primary" href="{{.Permalink}}">
+            <i class="fa fa-angle-double-left fa-2x" aria-hidden="true"></i>
+            <span class="text">{{.Title}}</span>
+        </a>
+        {{end}}&nbsp;
+        {{with .Next}}
+        <a data-balloon="Next Post" data-balloon-pos="left" class="u-pull-right button button-primary" href="{{.Permalink}}">
+          <span class="text">{{.Title}}</span>
+          <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+      </a> {{end}}
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

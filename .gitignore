@@ -1,0 +1,8 @@
+# Mac
+.DS_Store
+*/**/.DS_Store
+
+# exampleSite
+exampleSite/public
+
+node_modules

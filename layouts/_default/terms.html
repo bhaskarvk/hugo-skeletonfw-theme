@@ -1,0 +1,50 @@
+{{ partial "header.html" . }}
+<section class="row content">
+    <div class="columns twelve">
+        <div id="toc" class="table-of-contents">
+            <strong>{{ .Title }}</strong>
+            <hr class="top"/>
+            <nav id="TableOfContents">
+            <ul>
+                {{ range $key,$value := .Data.Terms.ByCount }}
+                    <li>
+                        {{ if ge $value.Count 2 }}
+                            <a href="#{{ $value.Name }}">{{ $value.Name }} - {{ $value.Count }} Posts</a>
+                        {{ end }}
+                    </li>
+                {{ end }}
+                <li><a href="#others">Others</a></li>
+            </ul>
+            </nav>
+            <hr class="bottom"/>
+        </div>
+         <div class="page-content">
+            {{ $data := .Data }}
+            {{ range $key,$value := .Data.Terms.ByCount }}
+                {{ if ge $value.Count 2 }}
+                    <h3 id="{{ $value.Name }}" >
+                        <a href="{{ $value.Name | urlize }}" style="text-transform: capitalize">{{ $value.Name }}</a> {{ $value.Count }} Posts
+                    </h3>
+                    <ul>
+                    {{ range ($value.Pages.ByDate).Reverse }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                    </ul>
+                {{ end }}
+            {{ end }}
+            <h3 id="others" >Others</h3>
+            <ul>
+                {{ range $key,$value := .Data.Terms.ByCount }}
+                    {{ if lt $value.Count 2 }}
+                        {{ range $value.Pages.ByDate }}
+                        <li><span style="text-transform: capitalize;font-weight:400">{{ $value.Name }}</span>: <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+
