@@ -1,0 +1,493 @@
+/* #### Comment Conventions ####
+*
+* #### READ ME CAREFULLY ####
+* ==== Major Sections ====
+* ---- Minor Sections ----
+*
+*/
+
+/* #### Based on skeleton-plus ####
+* This style is intended to customize skeleton-plus style.
+* So it doens't have styling of all parts, for that see skeleton-plus.css
+*/
+
+/*
+* #### Mobile Fist Approach ####
+* - Define Defaults for smallest screen size
+* - Use Media query to adapt to incrementing screen sizes
+*/
+
+/* ==== Typography ==== */
+/*
+* Change the @import line to your preferred typography file
+* - font-mplus
+* - font-open-sans
+* - font-ralway
+* - font-roboto
+*/
+@import 'font-roboto.styl'
+
+/* ==== VARIABLES ==== */
+
+/* ---- Colors ---- */
+bg_color =  #fcfcfc
+fg_color = #5a5a5a
+link_color = #1eaedb
+border_color = #ddd
+
+header_color = #666
+pre_color = #900
+code_color = pre_color
+blockquote_color = pre_color
+meta_color = #a6a6a6
+
+content_border =  1px solid #a9b7c6
+
+button_fg_color = fg_color
+button_border = 1px solid border_color
+button_hover_fg_color = #ffffff
+button_hover_border = 1px solid link_color
+button_hover_bg_color = link_color
+button_disabled_fg_color = #aaa
+button_disabled_border = 1px solid #aaa
+button_disabled_bg_color =  #f3f3f3
+
+toc_header_color = #333
+toc_header_bg = #E1E1E1
+
+
+/* ---- font stuff ---- */
+res_min = 350 // min screen resolution
+res_max = 1200 // max screen resolution
+
+fw_def = 300 // default font weight
+lh_def = 1.45 // default line height
+
+fs_min = 16px // minimum font size
+fs_max = 24px // maximum font size
+fs_def = fs_min // default font size for older browsers
+fs_body = 1.1rem // body
+fs_p = fs_body // paragraph
+// headers
+fs_h1 = 2.0rem
+fs_h1_medium = 1.7rem
+fs_h1_small = 1.6rem
+fs_h2 = 1.4rem
+fs_h3 = 1.2rem
+fs_h4 = 1rem
+fs_h5 = 0.9rem
+fs_h6 = 0.8rem
+// pre, code, blockquote
+fs_pre = 0.9rem
+fs_code = 0.85rem
+fs_bq = 1.2rem
+fs_small = 0.7rem
+fs_icons = 0.7rem
+fs_nested_ul = 0.8rem
+
+/* ---- hugo related variables ---- */
+
+
+// container widths
+cw_def = 98%
+cw_wide1 = 95%
+
+
+/* ==== Major HTML Components ==== */
+html
+  font-size: fs_def // fallback value for older browsers
+  background-color: bg_color
+  color: fg_color
+
+/* Modern browsers only need this one */
+@media screen and (min-width: 25em)
+  html
+    font-size: calc(16px + (24 - 16) * (100vw - 350px) / (1200 - 350))
+
+body
+  background-color: bg_color
+  color: fg_color
+  font-weight: fw_def
+  line-height: lh_def
+  /* fallback value. */
+  line-height: calc(1.30em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
+  font-size: fs_body
+  opacity: 1
+  transition: 1s opacity
+  &.fade-out
+    opacity: 0
+    transition: none
+
+header =
+  color: header_color
+  margin-bottom: 0.5rem
+  margin-top: 0.4rem
+
+h1
+  {header}
+  font-size: fs_h1
+
+h2
+  {header}
+  font-size: fs_h2
+
+h3
+  {header}
+  font-size: fs_h3
+
+h4
+  {header}
+  font-size: fs_h4
+
+h5
+  {header}
+  font-size: fs_h5
+
+h6
+  {header}
+  font-size: fs_h6
+
+code
+  border: 0
+  color: code_color
+  font-size: fs_code
+  padding: 0.1rem 0.3rem
+  hyphens: none
+
+pre
+  color: pre_color
+  font-size: fs_pre
+  margin-bottom: 1rem
+  > code
+    color: code_color
+    font-size: fs_pre
+    padding: 0.2rem 0.5rem
+    white-space: pre-wrap !important
+
+a
+  text-decoration: none
+
+hr
+  margin-top: 1rem
+  margin-bottom: 1rem
+
+blockquote
+  color: blockquote_color
+  margin-right: 5px
+  margin-left: 10px
+  padding-left: 15px
+  border-left: 3px solid #ccc
+  font-size: fs_bq
+  footer
+    cite:before
+      content: "—&nbsp;"
+
+/* ==== Hugo Theme Components ==== */
+/* ---- buttons ---- */
+.button
+  height: 2rem
+  margin-bottom: 0
+  line-height: 2rem
+  padding: 0 1rem
+  font-size: fs_icons
+  color: button_fg_color
+  background-color: bg_color
+  border: button_border
+  &:hover
+    color: button_hover_fg_color
+    background-color: button_hover_bg_color
+    border: button_hover_border
+  &.disabled
+    background-color: button_disabled_bg_color
+    color: button_disabled_fg_color
+    border: button_disabled_border
+    pointer-events: none
+  .fa
+    vertical-align: sub
+
+.button.button-primary
+  background-color: button_hover_bg_color
+  color: button_hover_fg_color
+  border: button_hover_border
+  box-shadow: 0 0 0 1px button_hover_border
+  transition: all 200ms ease-out;
+  &:hover
+    color: #000
+    background-color: button_hover_bg_color
+    border: button_hover_border
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  &.disabled
+    background-color: button_disabled_bg_color
+    color: button_disabled_fg_color
+    border: button_disabled_border
+    pointer-events: none
+
+.meta
+  color: meta_color
+  margin-bottom: 1px
+  font-style: italic
+
+nav
+  ul
+    // float: inherit
+    margin-bottom: 0.5rem
+    li
+      margin: 0 2.5px 10px 2.5px
+      display: inline
+      a.button span.text
+        display: none
+
+
+.container
+  padding: 0
+  width: cw_def
+
+header#main
+  margin: 1rem 0 2rem 0
+  text-align: center
+  h1
+    text-transform: uppercase
+  nav
+    ul
+      li
+        margin-right: 0.25rem
+        text-transform: uppercase
+
+.content
+  padding: 0.1rem
+  margin: 0 0 1rem
+  border: content_border
+  border-radius: 2px
+  img
+    max-width: 100%
+
+ul.post-list
+  list-style: none
+  /* display: list-item
+  align-items: center */ // TODO: Delete
+  .post-item
+    .post-date
+      color: meta_color
+      margin-bottom: 1px
+      font-style: italic
+      float: left
+      width: 10rem
+      text-align: right
+      margin-right: 0.5rem
+      margin-top: 2px
+    .post-title
+        margin-bottom: 0.5rem
+        a
+          color: header_color
+          &:hover
+            color: link_color
+    .summary
+      p
+        margin-bottom: 2px
+      div.read-more-link
+        font-weight: 400
+  hr.list-break
+    width: 50%
+    margin-top: 0.5rem
+    margin-bottom: 1rem
+    text-align: center
+
+header#title-container
+  h1.page-heading
+    font-size: fs_h1_medium
+  //p.meta
+    // TODO:
+  .taxonomy
+    margin-top: 15px
+    margin-bottom: 5px
+    small
+      vertical-align: text-top
+    .button
+      text-transform: capitalize
+      white-space: nowrap !important
+      font-weight: 400
+      height: 1.2rem
+      line-height: 1.2rem
+      padding-left: 10px
+      padding-right: 10px
+
+
+
+section.table-of-contents
+  text-transform: capitalize
+  margin-bottom: 20px !important
+  margin-top: 10px !important
+  header
+    font-weight: bold
+    font-size: fs_body
+    display: block
+    background-color: toc_header_bg
+    color: toc_header_color
+    padding-left: 1%
+    padding-top: 1%
+  hr
+    border-top: 3px solid #E1E1E1 !important
+    margin: 0 !important
+    &.top
+      margin-bottom: 10px !important
+    &.bottom
+      margin-top: 10px !important
+
+nav#TableOfContents
+  overflow: hidden
+  ul
+    padding: 0
+    margin: 0
+    list-style: none !important
+    font-size: 0.9rem
+    line-height: 1.2rem
+    li
+      display: list-item
+      margin: 0
+      padding: 0
+      padding-left: 10px
+      ul
+        font-size: fs_nested_ul
+      a
+        display: block
+        text-decoration: none !important
+        color: #000000
+        padding-left: 100%
+        margin-left: -100%
+        &:hover,
+        &:active,
+        &.active
+          background-color: link_color
+          color: bg_color
+
+section.page-content
+  h1
+    font-size: fs_h1_small
+  p
+    margin-bottom: 1rem
+    -webkit-hyphens: auto
+    -moz-hyphens: auto
+    -ms-hyphens: auto
+    hyphens: auto
+  ul
+    margin-bottom: 2px
+    list-style-position: outside
+    padding-left: 1rem
+    li
+      margin-bottom: 5px
+      -webkit-hyphens: auto
+      -moz-hyphens: auto
+      -ms-hyphens: auto
+      hyphens: auto
+      pre
+        margin-top: 0.25rem
+        margin-bottom: 1rem
+      p
+        display: inline
+      ul
+        margin: 5px
+        font-size: 95%
+
+.pagination
+  ul
+    display: flex
+    li
+      margin-right: 0.25rem
+      margin-left: 0.25rem
+      padding: 0
+      .button
+        margin-bottom: 0px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+
+footer
+  nav
+    ul
+      padding: 1rem 0.5rem 0 0.5rem;
+      margin-bottom: 0;
+      li
+        a
+          font-size: fs_icons
+          color: header_color
+          &:hover
+            color: link_color
+  #copyright
+    font-size: fs_small
+    margin-top: 2rem
+    text-align: center
+
+
+
+/* ---- blazy customization ---- */
+.b-lazy
+  -webkit-transition: opacity 500ms ease-in-out
+  -moz-transition: opacity 500ms ease-in-out
+  -o-transition: opacity 500ms ease-in-out
+  transition: opacity 500ms ease-in-out
+  max-width: 100%
+  opacity: 0
+
+.b-lazy.b-loaded
+  opacity: 1
+  border: 0px
+
+/* Using "!important" for floating/fixed stuff */
+/* ---- Back to Top Button ---- */
+#back-to-top
+  display: none
+  /* Hidden on mobile devices */
+  position: fixed !important
+  bottom: 0px !important
+  right: 12px !important
+  padding: 0px !important
+  font-size: 0.8rem !important
+  color: #666 !important
+  &:hover
+    color: link_color !important
+
+.u-pull-right
+  float: right !important
+
+.u-pull-left
+  float: left !important
+
+/* * ==== Media Queries ==== */
+
+/* Adapt to increasing screen sizes */
+@media only screen and (min-width: 600px)
+  html
+    font-size: calc(14px + (24 - 16) * (100vw - 350px) / (1200 - 350))
+
+@media only screen and (min-width: 750px)
+  nav a.button span.text
+    display: inline !important
+
+  .pager a.button
+    font-size: 0.5rem !important
+
+  .pager a.button span.text
+    display: inline !important
+
+  .container
+    width: cw_wide1 !important
+    /* contract the content a bit */
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px)
+  html
+    font-size: calc(12px + (22 - 16) * (100vw - 350px) / (1200 - 350))
+
+  body
+    line-height: calc(1.20em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
+
+  .table-of-contents
+    float: right !important
+    width: 20vw !important
+    margin-left: 1em !important
+    position: fixed !important
+    left: 0px !important
+    top: 33vh
+
+  .container
+    width: 70vw !important
+    margin-left: 25vw !important

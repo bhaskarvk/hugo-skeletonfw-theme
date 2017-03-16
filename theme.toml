@@ -1,12 +1,11 @@
-name = "HugoSkeleton"
+name = "HugoSkeletonFrameworkTheme"
 license = "MIT"
-licenselink = "https://github.com/bhaskar/hugo-theme-skeleton/blob/master/LICENSE.md"
-description = "Lightweight Hugo theme based on Skeleton"
-homepage = "https://github.com/bhaskarvk/hugo-theme-skeleton"
-tags = ["skeleton", "minimal", "clean", "comments"]
-features = ["blog", "responsive", "404", "icons", "disqus", "metadata", "prism"]
+licenselink = "https://github.com/bhaskar/hugo-skeletonfw-theme/blob/master/LICENSE"
+description = "Lightweight Hugo theme based on Skeleton Framework"
+homepage = "https://github.com/bhaskarvk/hugo-skeletonfw-theme"
+tags = ["skeleton", "minimal", "clean"]
+features = ["blog", "responsive", "404", "icons", "shortcodes"]
 min_version = 0.15
-
 [author]
   name = "Bhaskar Karambelkar"
   homepage = "http://www.karambelkar.info/"

@@ -1,4 +1,3 @@
-<!-- CSS -->
 
 <!-- skeleton & typeplate -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" integrity="sha256-t2/7smZfgrST4FS1DT0bs/KotCM74XlcqZN5Vu7xlrw=" crossorigin="anonymous" />
@@ -11,9 +10,13 @@
 <!-- lightbox -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" integrity="sha256-iU/Wh1HMAs/NgpurDAu14e7S3FkllcJ5aPnpPDdnO6c=" crossorigin="anonymous" />
 
-{{range .Site.Params.ExtraCssFiles}}
-  <link rel="stylesheet" href="{{.}}">
-{{end}}
+<!-- Extra CSS files in config.toml -->
+{{range .Site.Params.ExtraCssFiles }}
+  <link rel="stylesheet" href="{{.href}}"
+    {{ with .integrity }}integrity="{{ . }}"{{ end }}
+    {{ with .crossorigin }}crossorigin="{{ . }}"{{ end }}
+    />
+{{ end }}
 
 <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/styles.css">
 
@@ -22,6 +25,14 @@
 
 <!-- ballon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css" />
+
+<!-- Extra CSS files in the page's frontmatter -->
+{{range .Params.ExtraCssFiles }}
+  <link rel="stylesheet" href="{{.href}}"
+    {{ with .integrity }}integrity="{{ . }}"{{ end }}
+    {{ with .crossorigin }}crossorigin="{{ . }}"{{ end }}
+    />
+{{ end }}
 
 <!-- Icon -->
 <link rel="shortcut icon"

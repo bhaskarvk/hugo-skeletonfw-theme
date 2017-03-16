@@ -1,0 +1,5 @@
+<iframe class="b-lazy"  {{ with .Get "src" }}data-src="{{.}}" {{ end }}
+  {{ with .Get "width" }}width="{{.}}" {{ end }}
+  {{ with .Get "height" }}height="{{.}}" {{ end }}>
+ <p>Your browser does not support iframes.</p>
+</iframe>

@@ -6,3 +6,5 @@
 exampleSite/public
 
 node_modules
+.vscode
+yarn.lock

@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
     // $sections includes all of the container divs that relate to menu items.
-    var $sections = $('.page-content > :header');
+    var $sections = $('.page-content :header');
 
     $(window).scroll(function() {
 
@@ -46,9 +46,11 @@ $(document).ready(function() {
         // highlight table of contents on scroll
         if($('#TableOfContents').length && $(this).width() >= widthThreshold1) {
             if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+                //$('.table-of-contents').css('top','10px');
                 $('.table-of-contents').animate({
                     top: '10px'
                 }, 1000);
+                console.log("Top");
             }
 
             // currentScroll is the number of pixels the window has been scrolled
@@ -69,7 +71,7 @@ $(document).ready(function() {
                     // This is the bit of code that uses the currentSection as its source of ID
                     var id = $currentSection.attr('id');
                     $('#TableOfContents li a').removeClass('active');
-                    $("#TableOfContents li a[href=#" + id + "]").addClass('active');
+                    $("#TableOfContents li a[href='#" + id + "']").addClass('active');
                 }
 
             });

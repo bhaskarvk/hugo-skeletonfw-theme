@@ -10,11 +10,14 @@
     "babel-register": "^6.23.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-stylus": "^2.6.0",
     "gulp-clean-css": "^3.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.4.1",
     "run-sequence": "^1.2.2",
-    "graceful-fs": "^4.1.11"
+    "graceful-fs": "^4.1.11",
+    "minimatch": "3.0.3"
   },
   "babel": {
     "presets": [

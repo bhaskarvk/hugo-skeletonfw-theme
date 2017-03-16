@@ -1,0 +1,20 @@
+<!-- Piwik -->
+{{ with .Site.Params.piwik }}
+<script type="text/javascript">
+    var _paq = _paq || [];
+    {{ with .domains }} _paq.push(["setDomains", {{ split (delimit . ", ")  ", " }} ]); {{ end }}
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = {{ .url | safeURL }};
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', {{ .siteid }}]);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<noscript>
+    <p><img src="{{ .url | safeURL }}piwik.php?idsite={{ .siteid }}" style="border:0;" alt="" /></p>
+</noscript>
+{{ end }}
+<!-- End Piwik Code -->

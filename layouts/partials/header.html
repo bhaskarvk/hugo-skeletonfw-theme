@@ -8,18 +8,14 @@
     <script>
         document.body.className += ' fade-out';
     </script>
-    <div class="container">
-        <section class="header row">
-            <div class="columns twelve">
-                <h1>
-                    <div class="name">{{ .Site.Title }}</div>
-                </h1>
-                <nav>
-                    <ul>
-                        {{range .Site.Menus.main.ByWeight }}
-                        <li><a class="button" href="{{.URL}}">{{.Pre}}<span class="text">&nbsp;{{.Name}}</span></a></li>
-                        {{end}}
-                    </ul>
-                </nav>
-            </div>
-        </section>
+    <section class="container">
+        <header id="main">
+            <h1 id="site-title">{{ .Site.Title }}</h1>
+            <nav id="site-nav" class="row">
+                <ul class="twelve columns">
+                    {{range .Site.Menus.main.ByWeight }}
+                    <li><a class="button" href="{{.URL}}">{{.Pre}}<span class="text">&nbsp;{{.Name}}</span></a></li>
+                    {{end}}
+                </ul>
+            </nav>
+        </header>
