@@ -49,3 +49,8 @@ gulp.task('build-css', (callback) => {
 gulp.task('build', (callback) => {
   runSequence('build-css', callback)
 })
+
+// Watch asset folder for changes
+gulp.task("watch", ["build-css"], function () {
+  gulp.watch(cssSrcDir+'/styles.styl', ["build-css"])
+})

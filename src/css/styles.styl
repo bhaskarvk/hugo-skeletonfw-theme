@@ -57,15 +57,11 @@ toc_header_bg = #E1E1E1
 
 
 /* ---- font stuff ---- */
-res_min = 350 // min screen resolution
-res_max = 1200 // max screen resolution
 
 fw_def = 300 // default font weight
 lh_def = 1.45 // default line height
 
-fs_min = 16px // minimum font size
-fs_max = 24px // maximum font size
-fs_def = fs_min // default font size for older browsers
+fs_def = 16px // default font size for older browsers
 fs_body = 1.1rem // body
 fs_p = fs_body // paragraph
 // headers
@@ -87,29 +83,26 @@ fs_nested_ul = 0.8rem
 
 /* ---- hugo related variables ---- */
 
-
 // container widths
 cw_def = 98%
 cw_wide1 = 95%
 
-
 /* ==== Major HTML Components ==== */
 html
-  font-size: fs_def // fallback value for older browsers
+  font-size: fs_def // default font size
   background-color: bg_color
   color: fg_color
 
-/* Modern browsers only need this one */
-@media screen and (min-width: 25em)
+/* Adopt font-size by screen width */
+@media screen
   html
-    font-size: calc(16px + (24 - 16) * (100vw - 350px) / (1200 - 350))
+    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1200 - 350))
 
 body
   background-color: bg_color
   color: fg_color
   font-weight: fw_def
-  line-height: lh_def
-  /* fallback value. */
+  line-height: lh_def /* fallback value. */
   line-height: calc(1.30em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
   font-size: fs_body
   opacity: 1
@@ -180,7 +173,7 @@ blockquote
   font-size: fs_bq
   footer
     cite:before
-      content: "—&nbsp;"
+      content: "— "
 
 /* ==== Hugo Theme Components ==== */
 /* ---- buttons ---- */
@@ -263,8 +256,6 @@ header#main
 
 ul.post-list
   list-style: none
-  /* display: list-item
-  align-items: center */ // TODO: Delete
   .post-item
     .post-date
       color: meta_color
@@ -295,8 +286,6 @@ ul.post-list
 header#title-container
   h1.page-heading
     font-size: fs_h1_medium
-  //p.meta
-    // TODO:
   .taxonomy
     margin-top: 15px
     margin-bottom: 5px
@@ -443,7 +432,7 @@ footer
   right: 12px !important
   padding: 0px !important
   font-size: 0.8rem !important
-  color: #666 !important
+  color: header_color !important
   &:hover
     color: link_color !important
 
@@ -456,19 +445,16 @@ footer
 /* * ==== Media Queries ==== */
 
 /* Adapt to increasing screen sizes */
-@media only screen and (min-width: 600px)
-  html
-    font-size: calc(14px + (24 - 16) * (100vw - 350px) / (1200 - 350))
 
 @media only screen and (min-width: 750px)
   nav a.button span.text
     display: inline !important
 
-  .pager a.button
-    font-size: 0.5rem !important
-
-  .pager a.button span.text
-    display: inline !important
+  .pager
+    a.button
+      font-size: 0.5rem !important
+      span.text
+        display: inline !important
 
   .container
     width: cw_wide1 !important
@@ -476,20 +462,14 @@ footer
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px)
-  html
-    font-size: calc(12px + (22 - 16) * (100vw - 350px) / (1200 - 350))
-
-  body
-    line-height: calc(1.20em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
-
   .table-of-contents
     float: right !important
     width: 20vw !important
-    margin-left: 1em !important
+    margin-right: 1em !important
     position: fixed !important
-    left: 0px !important
-    top: 33vh
+    left: 76vw !important
+    top: 20vh
 
   .container
     width: 70vw !important
-    margin-left: 25vw !important
+    margin-right: 25vw !important

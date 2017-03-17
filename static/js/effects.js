@@ -45,13 +45,14 @@ $(document).ready(function() {
 
         // highlight table of contents on scroll
         if($('#TableOfContents').length && $(this).width() >= widthThreshold1) {
-            if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
-                //$('.table-of-contents').css('top','10px');
+
+            if ($(this).scrollTop() >= 100) { // If page is scrolled more than 50px
                 $('.table-of-contents').animate({
                     top: '10px'
                 }, 1000);
                 console.log("Top");
             }
+
 
             // currentScroll is the number of pixels the window has been scrolled
             var currentScroll = $(this).scrollTop();

@@ -52,18 +52,17 @@ html {
   background-color: #fcfcfc;
   color: #5a5a5a;
 }
-/* Modern browsers only need this one */
-@media screen and (min-width: 25em) {
+/* Adopt font-size by screen width */
+@media screen {
   html {
-    font-size: calc(16px + (24 - 16) * (100vw - 350px) / (1200 - 350));
+    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1200 - 350));
   }
 }
 body {
   background-color: #fcfcfc;
   color: #5a5a5a;
   font-weight: 300;
-  line-height: 1.45;
-/* fallback value. */
+  line-height: 1.45 /* fallback value. */;
   line-height: calc(1.3em + (1.35 - 1.3) * ((100vw - 21em) / (30 - 21)));
   font-size: 1.1rem;
   opacity: 1;
@@ -143,7 +142,7 @@ blockquote {
   font-size: 1.2rem;
 }
 blockquote footer cite:before {
-  content: "—&nbsp;";
+  content: "— ";
 }
 /* ==== Hugo Theme Components ==== */
 /* ---- buttons ---- */
@@ -231,8 +230,6 @@ header#main nav ul li {
 }
 ul.post-list {
   list-style: none;
-/* display: list-item
-  align-items: center */
 }
 ul.post-list .post-item .post-date {
   color: #a6a6a6;
@@ -440,11 +437,6 @@ footer #copyright {
 }
 /* * ==== Media Queries ==== */
 /* Adapt to increasing screen sizes */
-@media only screen and (min-width: 600px) {
-  html {
-    font-size: calc(14px + (24 - 16) * (100vw - 350px) / (1200 - 350));
-  }
-}
 @media only screen and (min-width: 750px) {
   nav a.button span.text {
     display: inline !important;
@@ -462,22 +454,16 @@ footer #copyright {
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  html {
-    font-size: calc(12px + (22 - 16) * (100vw - 350px) / (1200 - 350));
-  }
-  body {
-    line-height: calc(1.2em + (1.35 - 1.3) * ((100vw - 21em) / (30 - 21)));
-  }
   .table-of-contents {
     float: right !important;
     width: 20vw !important;
-    margin-left: 1em !important;
+    margin-right: 1em !important;
     position: fixed !important;
-    left: 0px !important;
-    top: 33vh;
+    left: 76vw !important;
+    top: 20vh;
   }
   .container {
     width: 70vw !important;
-    margin-left: 25vw !important;
+    margin-right: 25vw !important;
   }
 }
