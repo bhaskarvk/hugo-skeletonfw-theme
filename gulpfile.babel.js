@@ -7,6 +7,7 @@ import cleanCSS from 'gulp-clean-css'
 import sourcemaps from 'gulp-sourcemaps'
 import rename  from 'gulp-rename'
 import clean from 'gulp-clean'
+import autoprefixer from 'gulp-autoprefixer'
 
 let cssSrcDir = 'src/css'
 let cssDestDir = 'static/css'
@@ -25,6 +26,10 @@ gulp.task('stylus-to-css', function() {
 gulp.task('minify-css', function () {
   return gulp.src([cssDestDir+'/*.css','!'+cssDestDir+'/*.min.css'])
     .pipe(sourcemaps.init())
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions'],
+      cascade: false
+    }))
     .pipe(cleanCSS(
       {debug: true, inline: 'none'},
       function(details) {
