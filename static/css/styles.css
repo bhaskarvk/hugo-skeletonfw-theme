@@ -375,6 +375,8 @@ section.page-content ul li ul {
 }
 .pagination ul {
   display: flex;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .pagination ul li {
   margin-right: 0.25rem;
