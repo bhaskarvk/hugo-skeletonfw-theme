@@ -1,0 +1,63 @@
+baseurl  = "/"
+relativeURLs = false
+canonifyURLs = false
+theme = "skeletonfw"
+uglyURLs = false
+paginate = 5
+disableHugoGeneratorInject= false
+
+[blackfriday]
+    hrefTargetBlank = true
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    series = "series"
+
+[permalinks]
+  fixed = ":slug/"
+  posts = "/:year/:month/:slug/"
+
+[[menu.main]]
+    pre = "<i class='fa fa-home fa-2x'></i>"
+    name = "Home"
+    url = "/"
+    weight = -100
+[[menu.main]]
+    pre = "<i class='fa fa-tags fa-2x'></i>"
+    name = "Tags"
+    url = "/tags/"
+    weight = -50
+[[menu.main]]
+    pre = "<i class='fa fa-link fa-2x'></i>"
+    name = "Series"
+    url = "/series/"
+    weight = -10
+[[menu.main]]
+    pre = "<i class='fa fa-archive fa-2x'></i>"
+    name = "Categories"
+    url = "/categories/"
+    weight = 10
+[[menu.main]]
+    pre = "<i class='fa fa-info-circle fa-2x'></i>"
+    name = "About"
+    url = "/about/"
+    weight = 50
+
+[Params]
+    languageCode  = "en-US"
+    Title = "Blog"
+    author = "Blog Author"
+    copyright = "© 2017 All rights reserved."
+    DateFormParsable = "2006-01-02T15:04:05.999999-07:00"
+    DateFormFull  = "Mon Jan 2 2006 15:04:05 MST"
+    DateForm  = "Jan 2, 2006"
+    twitter = "#"
+    github = "#"
+    linkedin = "#"
+    stackoverflow = "#"
+    keybase = "#"
+    slideshare= "#"
+    reddit = "#"
+    medium = "#"
+

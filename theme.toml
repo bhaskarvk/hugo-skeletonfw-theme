@@ -3,9 +3,13 @@ license = "MIT"
 licenselink = "https://github.com/bhaskar/hugo-skeletonfw-theme/blob/master/LICENSE"
 description = "Lightweight Hugo theme based on Skeleton Framework"
 homepage = "https://github.com/bhaskarvk/hugo-skeletonfw-theme"
-tags = ["skeleton", "minimal", "clean"]
+tags = ["skeleton", "minimal", "clean", "semantic"]
 features = ["blog", "responsive", "404", "icons", "shortcodes"]
 min_version = 0.15
 [author]
   name = "Bhaskar Karambelkar"
   homepage = "http://www.karambelkar.info/"
+[original]
+  name = "hugo-theme-skeleton"
+  homepage = "https://github.com/jblawatt/hugo-theme-skeleton"
+  repo = "https://github.com/jblawatt/hugo-theme-skeleton"
