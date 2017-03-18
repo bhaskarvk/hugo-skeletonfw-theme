@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Blog</title>
-    <link>/series/tutorials/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/series/tutorials/index.xml</link>
     <description>Recent content in Tutorials on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
-    <atom:link href="/series/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/series/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Creating a New Theme</title>
-      <link>/2014/09/creating-a-new-theme/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/09/creating-a-new-theme/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;

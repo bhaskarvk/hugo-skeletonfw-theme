@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Templates on Blog</title>
-    <link>/tags/templates/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/templates/index.xml</link>
     <description>Recent content in Templates on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
-    <atom:link href="/tags/templates/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/templates/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/2014/04/hugo-template-primer/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/hugo-template-primer/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</guid>
       <description>
 
 &lt;h1 id=&#34;go-templates&#34;&gt;Go Templates&lt;/h1&gt;
@@ -75,7 +75,7 @@ functions.&lt;/p&gt;
 &lt;p&gt;Each go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-&lt;a href=&#34;/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
+&lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;A variable is accessed by referencing the variable name.&lt;/p&gt;
 
@@ -92,7 +92,7 @@ page you are rendering. More details are available on the
 
 &lt;p&gt;Go template ship with a few functions which provide basic functionality. The go
 template system also provides a mechanism for applications to extend the
-available functions with their own. &lt;a href=&#34;/layout/functions&#34;&gt;Hugo template
+available functions with their own. &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/layout/functions&#34;&gt;Hugo template
 functions&lt;/a&gt; provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -280,7 +280,7 @@ you want to inside of your templates.&lt;/p&gt;
 &lt;h2 id=&#34;using-content-page-parameters&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
 
 &lt;p&gt;In each piece of content you can provide variables to be used by the
-templates. This happens in the &lt;a href=&#34;/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
+templates. This happens in the &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just

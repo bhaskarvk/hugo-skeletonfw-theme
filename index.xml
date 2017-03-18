@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog</title>
-    <link>/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/index.xml</link>
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Creating a New Theme</title>
-      <link>/2014/09/creating-a-new-theme/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/09/creating-a-new-theme/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -1114,10 +1114,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>About Hugo</title>
-      <link>/about/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/about/</guid>
       <description>
 
 &lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
@@ -1152,10 +1152,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/2014/04/hugo-template-primer/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/hugo-template-primer/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</guid>
       <description>
 
 &lt;h1 id=&#34;go-templates&#34;&gt;Go Templates&lt;/h1&gt;
@@ -1216,7 +1216,7 @@ functions.&lt;/p&gt;
 &lt;p&gt;Each go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-&lt;a href=&#34;/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
+&lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;A variable is accessed by referencing the variable name.&lt;/p&gt;
 
@@ -1233,7 +1233,7 @@ page you are rendering. More details are available on the
 
 &lt;p&gt;Go template ship with a few functions which provide basic functionality. The go
 template system also provides a mechanism for applications to extend the
-available functions with their own. &lt;a href=&#34;/layout/functions&#34;&gt;Hugo template
+available functions with their own. &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/layout/functions&#34;&gt;Hugo template
 functions&lt;/a&gt; provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -1421,7 +1421,7 @@ you want to inside of your templates.&lt;/p&gt;
 &lt;h2 id=&#34;using-content-page-parameters&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
 
 &lt;p&gt;In each piece of content you can provide variables to be used by the
-templates. This happens in the &lt;a href=&#34;/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
+templates. This happens in the &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
@@ -1500,10 +1500,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/2014/04/getting-started-with-hugo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/getting-started-with-hugo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-getting-started&#34;&gt;Hugo: Getting Started&lt;/h1&gt;
@@ -1515,7 +1515,7 @@ appropriate version for your os and architecture.&lt;/p&gt;
 
 &lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
 
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;
 
@@ -1589,10 +1589,10 @@ Having nearly instant feedback enables you to have your creativity flow without 
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>/2014/03/migrate-to-hugo-from-jekyll/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/03/migrate-to-hugo-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/03/migrate-to-hugo-from-jekyll/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/03/migrate-to-hugo-from-jekyll/</guid>
       <description>
 
 &lt;h1 id=&#34;jekyll-to-hugo&#34;&gt;Jekyll to Hugo&lt;/h1&gt;
@@ -1619,7 +1619,7 @@ With Jekyll, something that looked like&lt;/p&gt;
 
 &lt;h2 id=&#34;create-your-hugo-configuration-file&#34;&gt;Create your Hugo configuration file&lt;/h2&gt;
 
-&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
 
 &lt;h2 id=&#34;set-your-configuration-publish-folder-to-site&#34;&gt;Set your configuration publish folder to &lt;code&gt;_site&lt;/code&gt;&lt;/h2&gt;
 
@@ -1645,13 +1645,13 @@ git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
 
 &lt;h2 id=&#34;convert-jekyll-templates-to-hugo-templates&#34;&gt;Convert Jekyll templates to Hugo templates&lt;/h2&gt;
 
-&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34; target=&#34;_blank&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34; target=&#34;_blank&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
 
 &lt;p&gt;As a single reference data point, converting my templates for &lt;a href=&#34;http://heyitsalex.net/&#34; target=&#34;_blank&#34;&gt;heyitsalex.net&lt;/a&gt; took me no more than a few hours.&lt;/p&gt;
 
 &lt;h2 id=&#34;convert-jekyll-plugins-to-hugo-shortcodes&#34;&gt;Convert Jekyll plugins to Hugo shortcodes&lt;/h2&gt;
 
-&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34; target=&#34;_blank&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
+&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34; target=&#34;_blank&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
 
 &lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
 
