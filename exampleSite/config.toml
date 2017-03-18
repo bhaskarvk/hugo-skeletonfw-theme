@@ -1,6 +1,6 @@
 baseurl  = "https://bhaskarvk.github.io/hugo-skeletonfw-theme/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 theme = "skeletonfw"
 uglyURLs = false
 paginate = 5
