@@ -1,4 +1,4 @@
-baseurl  = "/"
+baseurl  = "https://bhaskarvk.github.io/hugo-skeletonfw-theme/"
 relativeURLs = false
 canonifyURLs = false
 theme = "skeletonfw"
