@@ -32,6 +32,12 @@ $(document).ready(function() {
     // $sections includes all of the container divs that relate to menu items.
     var $sections = $('.page-content :header');
 
+    var tocTop = 0;
+
+    if($('#TableOfContents').length && $(this).width() >= widthThreshold1) {
+        tocTop = $(".table-of-contents").offset().top;
+    }
+
     $(window).scroll(function() {
 
         // show/hide back-to-top button on scroll
@@ -44,15 +50,18 @@ $(document).ready(function() {
         }
 
         // highlight table of contents on scroll
-        if($('#TableOfContents').length && $(this).width() >= widthThreshold1) {
+        if($('#TableOfContents').length && $(window).width() >= widthThreshold1) {
 
-            if ($(this).scrollTop() >= 100) { // If page is scrolled more than 50px
+            var top = $(window).scrollTop();
+            if (top >= tocTop) {
                 $('.table-of-contents').animate({
                     top: '10px'
-                }, 1000);
-                console.log("Top");
+                }, {duration:1000,queue:false});
+            } else if (top < tocTop) {
+                $('.table-of-contents').animate({
+                    top: tocTop
+                }, {duration:1000,queue:false});
             }
-
 
             // currentScroll is the number of pixels the window has been scrolled
             var currentScroll = $(this).scrollTop();
