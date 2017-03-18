@@ -9,3 +9,4 @@ node_modules
 .vscode
 yarn.lock
 .yarnclean
+docs
