@@ -1,0 +1,469 @@
+/* #### Comment Conventions ####
+*
+* #### READ ME CAREFULLY ####
+* ==== Major Sections ====
+* ---- Minor Sections ----
+*
+*/
+/* #### Based on skeleton-plus ####
+* This style is intended to customize skeleton-plus style.
+* So it doens't have styling of all parts, for that see skeleton-plus.css
+*/
+/*
+* #### Mobile Fist Approach ####
+* - Define Defaults for smallest screen size
+* - Use Media query to adapt to incrementing screen sizes
+*/
+/* ==== Typography ==== */
+/*
+* Change the @import line to your preferred typography file
+* - font-mplus
+* - font-open-sans
+* - font-ralway
+* - font-roboto
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i");
+body {
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", "Roboto Condensed", sans-serif;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+}
+pre,
+code {
+  font-family: 'Roboto Mono', monospace;
+}
+/* ==== VARIABLES ==== */
+/* ---- Colors ---- */
+/* ---- font stuff ---- */
+/* ---- hugo related variables ---- */
+/* ==== Major HTML Components ==== */
+html {
+  font-size: 16px;
+  background-color: #fcfcfc;
+  color: #5a5a5a;
+}
+/* Adopt font-size by screen width */
+@media screen {
+  html {
+    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1200 - 350));
+  }
+}
+body {
+  background-color: #fcfcfc;
+  color: #5a5a5a;
+  font-weight: 300;
+  line-height: 1.45 /* fallback value. */;
+  line-height: calc(1.3em + (1.35 - 1.3) * ((100vw - 21em) / (30 - 21)));
+  font-size: 1.1rem;
+  opacity: 1;
+  transition: 1s opacity;
+}
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
+h1 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 2rem;
+}
+h2 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 1.4rem;
+}
+h3 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+}
+h4 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+h5 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+h6 {
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+}
+code {
+  border: 0;
+  color: #900;
+  font-size: 0.85rem;
+  padding: 0.1rem 0.3rem;
+  hyphens: none;
+}
+pre {
+  color: #900;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+pre > code {
+  color: #900;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  white-space: pre-wrap !important;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+blockquote {
+  color: #900;
+  margin-right: 5px;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+  font-size: 1.2rem;
+}
+blockquote footer cite:before {
+  content: "— ";
+}
+/* ==== Hugo Theme Components ==== */
+/* ---- buttons ---- */
+.button {
+  height: 2rem;
+  margin-bottom: 0;
+  line-height: 2rem;
+  padding: 0 1rem;
+  font-size: 0.7rem;
+  color: #5a5a5a;
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+}
+.button:hover {
+  color: #fff;
+  background-color: #1eaedb;
+  border: 1px solid #1eaedb;
+}
+.button.disabled {
+  background-color: #f3f3f3;
+  color: #aaa;
+  border: 1px solid #aaa;
+  pointer-events: none;
+}
+.button .fa {
+  vertical-align: sub;
+}
+.button.button-primary {
+  background-color: #1eaedb;
+  color: #fff;
+  border: 1px solid #1eaedb;
+  box-shadow: 0 0 0 1px 1px solid #1eaedb;
+  transition: all 200ms ease-out;
+}
+.button.button-primary:hover {
+  color: #000;
+  background-color: #1eaedb;
+  border: 1px solid #1eaedb;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+.button.button-primary.disabled {
+  background-color: #f3f3f3;
+  color: #aaa;
+  border: 1px solid #aaa;
+  pointer-events: none;
+}
+.meta {
+  color: #a6a6a6;
+  margin-bottom: 1px;
+  font-style: italic;
+}
+nav ul {
+  margin-bottom: 0.5rem;
+}
+nav ul li {
+  margin: 0 2.5px 10px 2.5px;
+  display: inline;
+}
+nav ul li a.button span.text {
+  display: none;
+}
+.container {
+  padding: 0;
+  width: 98%;
+}
+header#main {
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+}
+header#main h1 {
+  text-transform: uppercase;
+}
+header#main nav ul li {
+  margin-right: 0.25rem;
+  text-transform: uppercase;
+}
+.content {
+  padding: 0.1rem;
+  margin: 0 0 1rem;
+  border: 1px solid #a9b7c6;
+  border-radius: 2px;
+}
+.content img {
+  max-width: 100%;
+}
+ul.post-list {
+  list-style: none;
+}
+ul.post-list .post-item .post-date {
+  color: #a6a6a6;
+  margin-bottom: 1px;
+  font-style: italic;
+  float: left;
+  width: 10rem;
+  text-align: right;
+  margin-right: 0.5rem;
+  margin-top: 2px;
+}
+ul.post-list .post-item .post-title {
+  margin-bottom: 0.5rem;
+}
+ul.post-list .post-item .post-title a {
+  color: #666;
+}
+ul.post-list .post-item .post-title a:hover {
+  color: #1eaedb;
+}
+ul.post-list .post-item .summary p {
+  margin-bottom: 2px;
+}
+ul.post-list .post-item .summary div.read-more-link {
+  font-weight: 400;
+}
+ul.post-list hr.list-break {
+  width: 50%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+header#title-container h1.page-heading {
+  font-size: 1.7rem;
+}
+header#title-container .taxonomy {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+header#title-container .taxonomy small {
+  vertical-align: text-top;
+}
+header#title-container .taxonomy .button {
+  text-transform: capitalize;
+  white-space: nowrap !important;
+  font-weight: 400;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+section.table-of-contents {
+  text-transform: capitalize;
+  margin-bottom: 20px !important;
+  margin-top: 10px !important;
+}
+section.table-of-contents header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: block;
+  background-color: #e1e1e1;
+  color: #333;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+section.table-of-contents hr {
+  border-top: 3px solid #e1e1e1 !important;
+  margin: 0 !important;
+}
+section.table-of-contents hr.top {
+  margin-bottom: 10px !important;
+}
+section.table-of-contents hr.bottom {
+  margin-top: 10px !important;
+}
+nav#TableOfContents {
+  overflow: hidden;
+}
+nav#TableOfContents ul {
+  padding: 0;
+  margin: 0;
+  list-style: none !important;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+nav#TableOfContents ul li {
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+nav#TableOfContents ul li ul {
+  font-size: 0.8rem;
+}
+nav#TableOfContents ul li a {
+  display: block;
+  text-decoration: none !important;
+  color: #000;
+  padding-left: 100%;
+  margin-left: -100%;
+}
+nav#TableOfContents ul li a:hover,
+nav#TableOfContents ul li a:active,
+nav#TableOfContents ul li a.active {
+  background-color: #1eaedb;
+  color: #fcfcfc;
+}
+section.page-content h1 {
+  font-size: 1.6rem;
+}
+section.page-content p {
+  margin-bottom: 1rem;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+section.page-content ul {
+  margin-bottom: 2px;
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+section.page-content ul li {
+  margin-bottom: 5px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+section.page-content ul li pre {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+section.page-content ul li p {
+  display: inline;
+}
+section.page-content ul li ul {
+  margin: 5px;
+  font-size: 95%;
+}
+.pagination ul {
+  display: flex;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.pagination ul li {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  padding: 0;
+}
+.pagination ul li .button {
+  margin-bottom: 0px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+footer nav ul {
+  padding: 1rem 0.5rem 0 0.5rem;
+  margin-bottom: 0;
+}
+footer nav ul li a {
+  font-size: 0.7rem;
+  color: #666;
+}
+footer nav ul li a:hover {
+  color: #1eaedb;
+}
+footer #copyright {
+  font-size: 0.7rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+/* ---- blazy customization ---- */
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+.b-lazy.b-loaded {
+  opacity: 1;
+  border: 0px;
+}
+/* Using "!important" for floating/fixed stuff */
+/* ---- Back to Top Button ---- */
+#back-to-top {
+  display: none;
+/* Hidden on mobile devices */
+  position: fixed !important;
+  bottom: 0px !important;
+  right: 12px !important;
+  padding: 0px !important;
+  font-size: 0.8rem !important;
+  color: #666 !important;
+}
+#back-to-top:hover {
+  color: #1eaedb !important;
+}
+.u-pull-right {
+  float: right !important;
+}
+.u-pull-left {
+  float: left !important;
+}
+/* * ==== Media Queries ==== */
+/* Adapt to increasing screen sizes */
+@media only screen and (min-width: 750px) {
+  nav a.button span.text {
+    display: inline !important;
+  }
+  .pager a.button {
+    font-size: 0.5rem !important;
+  }
+  .pager a.button span.text {
+    display: inline !important;
+  }
+  .container {
+    width: 95% !important;
+/* contract the content a bit */
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .table-of-contents {
+    float: right !important;
+    width: 20vw !important;
+    margin-right: 1em !important;
+    position: fixed !important;
+    left: 76vw !important;
+    top: 20vh;
+  }
+  .container {
+    width: 70vw !important;
+    margin-right: 25vw !important;
+  }
+}
