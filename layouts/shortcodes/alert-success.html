@@ -1,4 +1,4 @@
 <p class="alert alert-success">
     <i class="fa fa-check fa-2x" aria-hidden="true"></i>
-    {{ .Get "content" }}
+    {{ .Get "content" | markdownify | safeHTML }}
  </p>

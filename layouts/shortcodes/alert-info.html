@@ -1,4 +1,4 @@
 <p class="alert alert-info">
     <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
-    {{ .Get "content" }}
+    {{ .Get "content" | markdownify | safeHTML }}
  </p>
