@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Blog</title>
+    <title>Go on Hugo Skeleton F/W Theme</title>
     <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/go/index.xml</link>
-    <description>Recent content in Go on Blog</description>
+    <description>Recent content in Go on Hugo Skeleton F/W Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
@@ -11,10 +11,10 @@
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/goisforlovers/</guid>
       <description>
 
 &lt;h1 id=&#34;go-templates&#34;&gt;Go Templates&lt;/h1&gt;
@@ -359,10 +359,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-getting-started&#34;&gt;Hugo: Getting Started&lt;/h1&gt;

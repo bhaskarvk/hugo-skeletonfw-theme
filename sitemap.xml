@@ -2,7 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Alerts-Demo/</loc>
+    <lastmod>2017-03-21T17:22:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Tabs-Demo/</loc>
+    <lastmod>2017-03-21T16:56:29-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -12,24 +22,18 @@
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/03/migrate-to-hugo-from-jekyll/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -38,13 +42,19 @@
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/demo/</loc>
+    <lastmod>2017-03-21T17:22:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -56,13 +66,13 @@
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/golang/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/golang/</loc>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -74,8 +84,14 @@
   </url>
   
   <url>
-    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/posts/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/</loc>
+    <lastmod>2017-03-21T17:22:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/</loc>
+    <lastmod>2017-03-21T17:22:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   

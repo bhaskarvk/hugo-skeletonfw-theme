@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Blog</title>
+    <title>Hugo on Hugo Skeleton F/W Theme</title>
     <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/hugo/index.xml</link>
-    <description>Recent content in Hugo on Blog</description>
+    <description>Recent content in Hugo on Hugo Skeleton F/W Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/creating-a-new-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -1113,10 +1113,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-getting-started&#34;&gt;Hugo: Getting Started&lt;/h1&gt;
