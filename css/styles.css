@@ -201,6 +201,7 @@ blockquote footer cite:before {
   background-color: #f3f3f3;
   color: #aaa;
   border: 1px solid #aaa;
+  box-shadow: 0 0 1px #fcfcfc;
   pointer-events: none;
 }
 .meta {
