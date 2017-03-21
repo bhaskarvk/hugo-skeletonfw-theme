@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-{{ $paginator := .Paginate ( .Data.Pages.ByPublishDate ) 5 }}
+{{ $paginator := .Paginate ( .Data.Pages.ByPublishDate ) }}
 <main class="row content">
     <ul class="post-list columns twelve">
         {{ range $paginator.Pages }} {{ partial "li.html" . }} {{ end }}

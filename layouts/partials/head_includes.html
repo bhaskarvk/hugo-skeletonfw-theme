@@ -12,16 +12,25 @@
 
 <!-- Extra CSS files in config.toml -->
 {{range .Site.Params.ExtraCssFiles }}
-  <link rel="stylesheet" href="{{.href}}"
+<link rel="stylesheet" href="{{.href}}"
     {{ with .integrity }}integrity="{{ . }}"{{ end }}
-    {{ with .crossorigin }}crossorigin="{{ . }}"{{ end }}
-    />
+    {{ with .crossorigin }}crossorigin="{{ . }}"{{ end }} />
 {{ end }}
 
 <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/styles.min.css">
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/skeleton-tabs.min.css">
 
 <!-- highlight -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/androidstudio.min.css" integrity="sha256-rEVnyeMfkKzmBwocdeeiqGOu1M/ttUHB7K0meKIwqvw=" crossorigin="anonymous" />
+{{ if .Site.Params.highlightjsTheme }}
+{{ $theme := .Site.Params.highlightjsTheme }}
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/{{ $theme.name }}.min.css"
+    {{ with $theme.integrity }}integrity="{{ . }}"{{ end }}
+    {{ with $theme.crossorigin }}crossorigin="{{ . }}"{{ end }} >
+{{else}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk="
+    crossorigin="anonymous" />
+{{ end }}
 
 <!-- ballon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css" />

@@ -18,7 +18,7 @@ gulp.task('clean-css', function() {
 })
 
 gulp.task('stylus-to-css', function() {
-  return gulp.src([cssSrcDir+'/styles.styl'])
+  return gulp.src([cssSrcDir+'/*.styl'])
     .pipe(stylus())
     .pipe(gulp.dest(cssDestDir))
 })
@@ -52,5 +52,5 @@ gulp.task('build', (callback) => {
 
 // Watch asset folder for changes
 gulp.task("watch", ["build-css"], function () {
-  gulp.watch(cssSrcDir+'/styles.styl', ["build-css"])
+  gulp.watch(cssSrcDir+'/**/*.styl', ["build-css"])
 })

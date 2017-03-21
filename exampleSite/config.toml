@@ -46,18 +46,23 @@ disableHugoGeneratorInject= false
 
 [Params]
     languageCode  = "en-US"
-    Title = "Blog"
+    Title = "Hugo Skeleton F/W Theme"
     author = "Blog Author"
     copyright = "© 2017 All rights reserved."
     DateFormParsable = "2006-01-02T15:04:05.999999-07:00"
     DateFormFull  = "Mon Jan 2 2006 15:04:05 MST"
     DateForm  = "Jan 2, 2006"
-    twitter = "#"
-    github = "#"
-    linkedin = "#"
-    stackoverflow = "#"
-    keybase = "#"
-    slideshare= "#"
-    reddit = "#"
-    medium = "#"
+    [Params.highlightjsTheme]
+        name = "androidstudio"
+        integrity = "sha256-rEVnyeMfkKzmBwocdeeiqGOu1M/ttUHB7K0meKIwqvw="
+        crossorigin = "anonymous"
+    [Params.social]
+        twitter = "#"
+        github = "#"
+        linkedin = "#"
+        stackoverflow = "#"
+        keybase = "#"
+        slideshare= "#"
+        reddit = "#"
+        medium = "#"
 

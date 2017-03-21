@@ -1,6 +1,7 @@
 var widthThreshold1 = 992;
 var widthThreshold2 = 750;
 
+// smooth scroll to top when back-to-top button is clicked
 $('#back-to-top').click(function() {
     $('body,html').animate({
         scrollTop : 0
@@ -10,10 +11,35 @@ $('#back-to-top').click(function() {
 
 $(document).ready(function() {
 
+    // $sections includes all of the container divs that relate to menu items.
+    var $sections = $('.page-content :header');
+
+    var scrollTop = $(window).scrollTop();
+    var mainTop = $("main").offset().top;
+
+    // Do we have a TOC?
+    if($('.table-of-contents').length) {
+        var tocLeft = $(".table-of-contents").offset().left;
+
+        // Is the TOC floating on the side?
+        if($(window).width() >= widthThreshold1) {
+            // Have we scrolled passed the main Content
+            if(scrollTop <= mainTop) {
+                // If not set TOC's height = main Content's height
+                $('.table-of-contents').offset({top : mainTop + 2, left: tocLeft});
+            } else {
+                // Else set TOC's height = Scroll Top + 5px
+                $('.table-of-contents').offset({top : scrollTop + 5 , left: tocLeft});
+            }
+        }
+    }
+
+    // Show our content
     $(function () {
         $('body').removeClass('fade-out');
     });
 
+    // Set up smooth scrolling to an anchor when and anchor link is clicked
     $(function () {
         $('a[href*="#"]:not([href="#"])').click(function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -29,42 +55,47 @@ $(document).ready(function() {
         });
     });
 
-    // $sections includes all of the container divs that relate to menu items.
-    var $sections = $('.page-content :header');
+    // recalculate TOC position on resizing
+    $(window).resize(function() {
+        // Do we have a TOC and is it floating on the side?
+        if($('.table-of-contents').length && $(window).width() >= widthThreshold1) {
+            var scrollTop = $(window).scrollTop();
+            var mainTop = $("main").offset().top;
+            var tocLeft = $(".table-of-contents").offset().left;
 
-    var tocTop = 0;
-
-    if($('#TableOfContents').length && $(this).width() >= widthThreshold1) {
-        tocTop = $(".table-of-contents").offset().top;
-    }
+            // If we have not scrolled passed the main content?
+            if(scrollTop <= mainTop) {
+                $('.table-of-contents').offset({top : mainTop + 2, left: tocLeft});
+            }
+        }
+    });
 
     $(window).scroll(function() {
 
+        var scrollTop = $(window).scrollTop();
+        var mainTop = $("main").offset().top;
+
         // show/hide back-to-top button on scroll
-        if($(this).width() >= widthThreshold2) {
-            if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+        if($(window).width() >= widthThreshold2) {
+            if (scrollTop >= mainTop) {
                 $('#back-to-top').fadeIn(50); // Fade in the arrow
             } else {
                 $('#back-to-top').fadeOut(50); // Else fade out the arrow
             }
         }
 
-        // highlight table of contents on scroll
-        if($('#TableOfContents').length && $(window).width() >= widthThreshold1) {
+        // Do we have a TOC and is it floating on the side?
+        if($('.table-of-contents').length && $(window).width() >= widthThreshold1) {
 
-            var top = $(window).scrollTop();
-            if (top >= tocTop) {
-                $('.table-of-contents').animate({
-                    top: '10px'
-                }, {duration:1000,queue:false});
-            } else if (top < tocTop) {
-                $('.table-of-contents').animate({
-                    top: tocTop
-                }, {duration:1000,queue:false});
+            var tocLeft = $(".table-of-contents").offset().left;
+            // Have we scrolled passed the main Content
+            if(scrollTop <= mainTop) {
+                // If not set TOC's height = main Content's height
+                $('.table-of-contents').offset({top : mainTop + 2 , left: tocLeft});
+            } else {
+                // Else set TOC's height = Scroll Top + 5px
+                $('.table-of-contents').offset({top : scrollTop + 5 , left: tocLeft});
             }
-
-            // currentScroll is the number of pixels the window has been scrolled
-            var currentScroll = $(this).scrollTop();
 
             // $currentSection is somewhere to place the section we must be looking at
             var $currentSection
@@ -74,9 +105,9 @@ $(document).ready(function() {
                 // divPosition is the position down the page in px of the current section we are testing
                 var divPosition = $(this).offset().top;
 
-                // If the divPosition is less the the currentScroll position the div we are testing has moved above the window edge.
+                // If the divPosition is less the the scrolTop position the div we are testing has moved above the window edge.
                 // the -1 is so that it includes the div 1px before the div leave the top of the window.
-                if (divPosition - 50 < currentScroll) {
+                if (divPosition - 50 < scrollTop) {
                     $currentSection = $(this);
                     // This is the bit of code that uses the currentSection as its source of ID
                     var id = $currentSection.attr('id');

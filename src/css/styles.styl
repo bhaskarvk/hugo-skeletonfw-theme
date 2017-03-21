@@ -25,36 +25,17 @@
 * - font-ralway
 * - font-roboto
 */
-@import 'font-roboto.styl'
+@import 'fonts/font-roboto.styl'
 
 /* ==== VARIABLES ==== */
 
 /* ---- Colors ---- */
-bg_color =  #fcfcfc
-fg_color = #5a5a5a
-link_color = #1eaedb
-border_color = #ddd
+@import 'colors/palette-default.styl'
 
-header_color = #666
-pre_color = #900
-code_color = pre_color
-blockquote_color = pre_color
-meta_color = #a6a6a6
-
-content_border =  1px solid #a9b7c6
-
-button_fg_color = fg_color
-button_border = 1px solid border_color
-button_hover_fg_color = #ffffff
-button_hover_border = 1px solid link_color
-button_hover_bg_color = link_color
-button_disabled_fg_color = #aaa
-button_disabled_border = 1px solid #aaa
-button_disabled_bg_color =  #f3f3f3
-
-toc_header_color = #333
-toc_header_bg = #E1E1E1
-
+content_border =  1px solid content_border_color
+button_border = 1px solid button_border_color
+button_hover_border = 1px solid button_hover_border_color
+button_disabled_border = 1px solid button_disabled_border_color
 
 /* ---- font stuff ---- */
 
@@ -79,6 +60,7 @@ fs_code = 0.85rem
 fs_bq = 1.2rem
 fs_small = 0.7rem
 fs_icons = 0.7rem
+fs_toc_ul = 0.9rem
 fs_nested_ul = 0.8rem
 
 /* ---- hugo related variables ---- */
@@ -96,7 +78,7 @@ html
 /* Adopt font-size by screen width */
 @media screen
   html
-    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1200 - 350))
+    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1100 - 350))
 
 body
   background-color: bg_color
@@ -143,15 +125,20 @@ h6
 code
   border: 0
   color: code_color
+  background-color: code_bg_color
   font-size: fs_code
   padding: 0.1rem 0.3rem
   hyphens: none
 
 pre
   color: pre_color
+  background-color: pre_bg_color
   font-size: fs_pre
   margin-bottom: 1rem
+  border-radius: 4px
+  box-shadow: 0 0 6px box_shadow_color
   > code
+    margin: 0
     color: code_color
     font-size: fs_pre
     padding: 0.2rem 0.5rem
@@ -159,17 +146,21 @@ pre
 
 a
   text-decoration: none
+  color: link_color
+  &:hover
+    color: link_hover_color
 
 hr
   margin-top: 1rem
   margin-bottom: 1rem
+  border-color: content_border_color
 
 blockquote
   color: blockquote_color
   margin-right: 5px
   margin-left: 10px
   padding-left: 15px
-  border-left: 3px solid #ccc
+  border-left: 3px solid blockquote_border_color
   font-size: fs_bq
   footer
     cite:before
@@ -184,12 +175,15 @@ blockquote
   padding: 0 1rem
   font-size: fs_icons
   color: button_fg_color
-  background-color: bg_color
+  background-color: button_bg_color
   border: button_border
+  box-shadow: 0 0 0 button_border_color
+  transition: all 250ms ease-out;
   &:hover
     color: button_hover_fg_color
     background-color: button_hover_bg_color
     border: button_hover_border
+    box-shadow: 0 0 6px box_shadow_color
   &.disabled
     background-color: button_disabled_bg_color
     color: button_disabled_fg_color
@@ -202,13 +196,13 @@ blockquote
   background-color: button_hover_bg_color
   color: button_hover_fg_color
   border: button_hover_border
-  box-shadow: 0 0 0 1px button_hover_border
-  transition: all 200ms ease-out;
+  box-shadow: 0 0 0 1px button_hover_border_color
+  transition: all 250ms ease-out;
   &:hover
-    color: #000
+    color: primary_button_hover_fg_color
     background-color: button_hover_bg_color
     border: button_hover_border
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 6px box_shadow_color
   &.disabled
     background-color: button_disabled_bg_color
     color: button_disabled_fg_color
@@ -270,8 +264,9 @@ ul.post-list
         margin-bottom: 0.5rem
         a
           color: header_color
+          transition: all 250ms ease-out;
           &:hover
-            color: link_color
+            color: link_hover_color
     .summary
       p
         margin-bottom: 2px
@@ -306,16 +301,18 @@ section.table-of-contents
   text-transform: capitalize
   margin-bottom: 20px !important
   margin-top: 10px !important
+  height: 80%
   header
     font-weight: bold
     font-size: fs_body
     display: block
     background-color: toc_header_bg
     color: toc_header_color
+    box-shadow: 0 0 6px box_shadow_color
     padding-left: 1%
     padding-top: 1%
   hr
-    border-top: 3px solid #E1E1E1 !important
+    border-top: 3px solid toc_header_bg !important
     margin: 0 !important
     &.top
       margin-bottom: 10px !important
@@ -323,31 +320,39 @@ section.table-of-contents
       margin-top: 10px !important
 
 nav#TableOfContents
-  overflow: hidden
+  height: 100%
+  overflow-x: hidden
+  overflow-y: scroll
   ul
     padding: 0
     margin: 0
     list-style: none !important
-    font-size: 0.9rem
+    font-size: fs_toc_ul
     line-height: 1.2rem
+    ul
+      font-size: 0.85rem
+      ul
+        font-size: 0.8rem
     li
       display: list-item
       margin: 0
       padding: 0
       padding-left: 10px
-      ul
-        font-size: fs_nested_ul
       a
         display: block
         text-decoration: none !important
-        color: #000000
+        color: toc_link_color
         padding-left: 100%
         margin-left: -100%
-        &:hover,
+        transition: all 250ms ease-out;
+        &:hover
+          background-color: alpha(toc_hover_bg_color,.80)
+          color: toc_hover_fg_color
         &:active,
         &.active
-          background-color: link_color
-          color: bg_color
+          background-color: toc_hover_bg_color
+          color: toc_hover_fg_color
+          box-shadow: 0 0 6px box_shadow_color
 
 section.page-content
   h1
@@ -399,9 +404,10 @@ footer
       li
         a
           font-size: fs_icons
-          color: header_color
+          color: icons_color
+          transition: all 250ms ease-out;
           &:hover
-            color: link_color
+            color: icons_hover_color
   #copyright
     font-size: fs_small
     margin-top: 2rem
@@ -432,15 +438,45 @@ footer
   right: 12px !important
   padding: 0px !important
   font-size: 0.8rem !important
-  color: header_color !important
+  color: link_color !important
+  transition: all 250ms ease-in-out
   &:hover
-    color: link_color !important
+    color: link_hover_color !important
 
 .u-pull-right
   float: right !important
 
 .u-pull-left
   float: left !important
+
+.alert
+    display: block !important
+    padding: 20px !important
+    border: 0 !important
+    border-left: 5px solid !important
+    i
+      vertical-align: middle
+      margin-right: 20px
+
+.alert-success
+    background-color: #D5F5E3 !important
+    border-left-color: #2f945b !important
+    color: #2f945b !important
+
+.alert-info
+    background-color: #D6EAF8 !important
+    border-left-color: #3498DB !important
+    color: #3498DB !important
+
+.alert-warning
+    background-color: #FCF3CF !important
+    border-left-color: #b99400 !important
+    color: #b99400 !important
+
+.alert-error
+    background-color: #F2D7D5 !important
+    border-left-color: #C0392B !important
+    color: #C0392B !important
 
 /* * ==== Media Queries ==== */
 
@@ -468,8 +504,9 @@ footer
     margin-right: 1em !important
     position: fixed !important
     left: 76vw !important
-    top: 20vh
+    top: 165px
 
   .container
     width: 70vw !important
     margin-right: 25vw !important
+

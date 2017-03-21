@@ -9,6 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 <script src="{{ .Site.BaseURL }}js/effects.js"></script>
+<script src="{{ .Site.BaseURL }}js/skeleton-tabs.js"></script>
 
 <!-- blazy -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
@@ -26,8 +27,13 @@
 <!-- highlight -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"
   integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"
-  integrity="sha256-XrZQp+ZMfovqr6Hb2M6okHvSEYaB/+Xbx7toWmOOZUM=" crossorigin="anonymous"></script>
+
+{{ range .Site.Params.highlightjsLangs }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/{{ .lang }}.min.js"
+  {{ with .integrity }}integrity="{{ . }}"{{ end }}
+  {{ with .crossorigin }}crossorigin="{{ . }}"{{ end }}></script>
+{{ end }}
+
 <script>
   hljs.initHighlightingOnLoad();
 </script>
