@@ -12,10 +12,10 @@
     
     <item>
       <title>Alerts Demo</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Alerts-Demo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/alerts-demo/</link>
       <pubDate>Tue, 21 Mar 2017 17:22:50 -0400</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Alerts-Demo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/alerts-demo/</guid>
       <description>
 
 &lt;h1 id=&#34;demo-of-all-the-alerts&#34;&gt;Demo of all the Alerts&lt;/h1&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>Tabs Demo</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Tabs-Demo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/tabs-demo/</link>
       <pubDate>Tue, 21 Mar 2017 16:56:29 -0400</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/Tabs-Demo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/tabs-demo/</guid>
       <description>&lt;ul class=&#34;tab-nav&#34;&gt;
   &lt;li&gt;
     &lt;a class=&#34;button active&#34; href=&#34;#one&#34;&gt;Tab 1&lt;/a&gt;
@@ -84,10 +84,10 @@
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/creating-a-new-theme/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/creating-a-new-theme/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -1224,10 +1224,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/goisforlovers/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/goisforlovers/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/hugo-template-primer/</guid>
       <description>
 
 &lt;h1 id=&#34;go-templates&#34;&gt;Go Templates&lt;/h1&gt;
@@ -1572,10 +1572,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/hugoisforlovers/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-getting-started&#34;&gt;Hugo: Getting Started&lt;/h1&gt;
@@ -1661,10 +1661,10 @@ Having nearly instant feedback enables you to have your creativity flow without 
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/migrate-from-jekyll/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/03/migrate-to-hugo-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/post/migrate-from-jekyll/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/03/migrate-to-hugo-from-jekyll/</guid>
       <description>
 
 &lt;h1 id=&#34;jekyll-to-hugo&#34;&gt;Jekyll to Hugo&lt;/h1&gt;
