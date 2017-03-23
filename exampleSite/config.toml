@@ -16,7 +16,7 @@ disableHugoGeneratorInject= false
 
 [permalinks]
   fixed = ":slug/"
-  posts = "/:year/:month/:slug/"
+  post = "/:year/:month/:slug/"
 
 [[menu.main]]
     pre = "<i class='fa fa-home fa-2x'></i>"
