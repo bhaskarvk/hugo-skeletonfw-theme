@@ -3,6 +3,14 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ if .Site.Params.Description }}<meta name="description" content="{{ .Site.Params.Description }}">{{ end }}
+{{ if .Description }}
+<meta name="description" content="{{ .Description }}">
+{{ else if .Site.Params.Description }}
+<meta name="description" content="{{ .Site.Params.Description }}">
+{{ end }}
 <link href="{{ .Site.RSSLink  }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 <link href="{{ .Site.RSSLink  }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+<!-- SEO Stuff -->
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/schema.html" . }}
+{{ template "_internal/twitter_cards.html" . }}

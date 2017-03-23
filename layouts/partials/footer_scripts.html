@@ -38,7 +38,10 @@
   hljs.initHighlightingOnLoad();
 </script>
 
+<!-- Pikwik Analytics -->
 {{ partial "piwik.html" . }}
+<!-- Google Analytics -->
+{{ template "_internal/google_analytics.html" . }}
 
 {{range .Params.ExtraJsFiles}}
     <script src="{{.src}}"
