@@ -17,19 +17,19 @@ $(document).ready(function() {
     var scrollTop = $(window).scrollTop();
     var mainTop = $("main").offset().top;
 
-    // Do we have a TOC?
-    if($('.table-of-contents').length) {
-        var tocLeft = $(".table-of-contents").offset().left;
+    // Do we have a sidebar?
+    if($('.sidebar').length) {
+        var tocLeft = $(".sidebar").offset().left;
 
-        // Is the TOC floating on the side?
+        // Is the sidebar floating on the side?
         if($(window).width() >= widthThreshold1) {
             // Have we scrolled passed the main Content
             if(scrollTop <= mainTop) {
-                // If not set TOC's height = main Content's height
-                $('.table-of-contents').offset({top : mainTop + 2, left: tocLeft});
+                // If not set sidebar's height = main Content's height
+                $('.sidebar').offset({top : mainTop + 2, left: tocLeft});
             } else {
-                // Else set TOC's height = Scroll Top + 5px
-                $('.table-of-contents').offset({top : scrollTop + 5 , left: tocLeft});
+                // Else set sidebar's height = Scroll Top + 5px
+                $('.sidebar').offset({top : scrollTop + 5 , left: tocLeft});
             }
         }
     }
@@ -55,17 +55,17 @@ $(document).ready(function() {
         });
     });
 
-    // recalculate TOC position on resizing
+    // recalculate sidebar position on resizing
     $(window).resize(function() {
-        // Do we have a TOC and is it floating on the side?
-        if($('.table-of-contents').length && $(window).width() >= widthThreshold1) {
+        // Do we have a sidebar and is it floating on the side?
+        if ($('.sidebar').length && $(window).width() >= widthThreshold1) {
             var scrollTop = $(window).scrollTop();
             var mainTop = $("main").offset().top;
-            var tocLeft = $(".table-of-contents").offset().left;
+            var tocLeft = $(".sidebar").offset().left;
 
             // If we have not scrolled passed the main content?
-            if(scrollTop <= mainTop) {
-                $('.table-of-contents').offset({top : mainTop + 2, left: tocLeft});
+            if (scrollTop <= mainTop) {
+                $('.sidebar').offset({ top: mainTop + 2, left: tocLeft });
             }
         }
     });
@@ -84,17 +84,17 @@ $(document).ready(function() {
             }
         }
 
-        // Do we have a TOC and is it floating on the side?
-        if($('.table-of-contents').length && $(window).width() >= widthThreshold1) {
+        // Do we have a sidebar and is it floating on the side?
+        if($('.sidebar').length && $(window).width() >= widthThreshold1) {
 
-            var tocLeft = $(".table-of-contents").offset().left;
+            var tocLeft = $(".sidebar").offset().left;
             // Have we scrolled passed the main Content
             if(scrollTop <= mainTop) {
-                // If not set TOC's height = main Content's height
-                $('.table-of-contents').offset({top : mainTop + 2 , left: tocLeft});
+                // If not set sidebar's height = main Content's height
+                $('.sidebar').offset({top : mainTop + 2 , left: tocLeft});
             } else {
-                // Else set TOC's height = Scroll Top + 5px
-                $('.table-of-contents').offset({top : scrollTop + 5 , left: tocLeft});
+                // Else set sidebar's height = Scroll Top + 5px
+                $('.sidebar').offset({top : scrollTop + 5 , left: tocLeft});
             }
 
             // $currentSection is somewhere to place the section we must be looking at
