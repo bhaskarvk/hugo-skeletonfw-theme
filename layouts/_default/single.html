@@ -15,11 +15,10 @@
             <hr/>
         </header>
         {{ if isset .Params "showtoc" }}
-        <section id="toc" class="table-of-contents">
+        <section id="toc" class="sidebar">
             <header>Table of Contents</header>
-            <hr class="top"/>
             {{ .TableOfContents }}
-            <hr class="bottom"/>
+            <hr/>
         </section>
         {{ end }}
         <section class="page-content">

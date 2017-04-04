@@ -1,7 +1,6 @@
 {
   "name": "hugo-skeletonfw-theme",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",

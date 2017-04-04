@@ -25,7 +25,7 @@
 * - font-ralway
 * - font-roboto
 */
-@import 'fonts/font-roboto.styl'
+@import 'fonts/font-open-sans.styl'
 
 /* ==== VARIABLES ==== */
 
@@ -55,8 +55,8 @@ fs_h4 = 1rem
 fs_h5 = 0.9rem
 fs_h6 = 0.8rem
 // pre, code, blockquote
-fs_pre = 0.9rem
-fs_code = 0.85rem
+fs_pre = 1.1rem
+fs_code = 1.0rem
 fs_bq = 1.2rem
 fs_small = 0.7rem
 fs_icons = 0.7rem
@@ -78,14 +78,14 @@ html
 /* Adopt font-size by screen width */
 @media screen
   html
-    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1100 - 350))
+    font-size: calc(14px + (18 - 16) * (100vw - 350px) / (1100 - 350))
 
 body
   background-color: bg_color
   color: fg_color
   font-weight: fw_def
   line-height: lh_def /* fallback value. */
-  line-height: calc(1.30em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
+  line-height: calc(1.20em + (1.35 - 1.3) * ((100vw - 21em)/(30 - 21)))
   font-size: fs_body
   opacity: 1
   transition: 1s opacity
@@ -96,11 +96,12 @@ body
 header =
   color: header_color
   margin-bottom: 0.5rem
-  margin-top: 0.4rem
+  margin-top: 2.0rem
+  font-weight: 500
 
 h1
   {header}
-  font-size: fs_h1
+  //font-size: fs_h1
 
 h2
   {header}
@@ -229,7 +230,6 @@ nav
 
 .container
   padding: 0
-  width: cw_def
 
 header#main
   margin: 1rem 0 2rem 0
@@ -282,6 +282,7 @@ ul.post-list
 
 header#title-container
   h1.page-heading
+    margin-top: 0.5rem
     font-size: fs_h1_medium
   .taxonomy
     margin-top: 15px
@@ -292,14 +293,12 @@ header#title-container
       text-transform: capitalize
       white-space: nowrap !important
       font-weight: 400
-      height: 1.2rem
+      height: 1.5rem
       line-height: 1.2rem
       padding-left: 10px
       padding-right: 10px
 
-
-
-section.table-of-contents
+section.sidebar
   text-transform: capitalize
   margin-bottom: 20px !important
   margin-top: 10px !important
@@ -311,18 +310,16 @@ section.table-of-contents
     background-color: toc_header_bg
     color: toc_header_color
     box-shadow: 0 0 6px box_shadow_color
-    padding-left: 1%
-    padding-top: 1%
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
   hr
     border-top: 3px solid toc_header_bg !important
     margin: 0 !important
-    &.top
-      margin-bottom: 10px !important
-    &.bottom
-      margin-top: 10px !important
+    margin-top: 10px !important
 
 nav#TableOfContents
-  height: 100%
+  max-height: 100%
   overflow-x: hidden
   overflow-y: scroll
   ul
@@ -496,11 +493,10 @@ footer
 
   .container
     width: cw_wide1 !important
-    /* contract the content a bit */
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px)
-  .table-of-contents
+  .sidebar
     float: right !important
     width: 20vw !important
     margin-right: 1em !important
@@ -511,4 +507,3 @@ footer
   .container
     width: 70vw !important
     margin-right: 25vw !important
-

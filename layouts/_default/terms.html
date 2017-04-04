@@ -1,9 +1,8 @@
 {{ partial "header.html" . }}
 <main class="row content">
     <section class="columns twelve">
-        <section id="toc" class="table-of-contents">
+        <section id="toc" class="sidebar">
             <header>{{ .Title }}</header>
-            <hr class="top"/>
             <nav id="TableOfContents">
             <ul>
                 {{ range $key,$value := .Data.Terms.ByCount }}
@@ -16,7 +15,7 @@
                 <li><a href="#others">Others</a></li>
             </ul>
             </nav>
-            <hr class="bottom"/>
+            <hr/>
         </section>
          <section class="page-content">
             {{ $data := .Data }}

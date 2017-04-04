@@ -22,11 +22,11 @@
 * - font-ralway
 * - font-roboto
 */
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Anton:300,300i,400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono:300,300i,400,400i,700,700i");
 body {
-  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 h1,
 h2,
@@ -34,13 +34,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Roboto Condensed", sans-serif;
-  letter-spacing: 0.2px;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.75px;
   font-weight: bold;
 }
 pre,
 code {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Droid Sans Mono", monospace;
+  letter-spacing: -0.05rem;
 }
 /* ==== VARIABLES ==== */
 /* ---- Colors ---- */
@@ -50,20 +51,20 @@ code {
 html {
   font-size: 16px;
   background-color: #fcfcfc;
-  color: #5a5a5a;
+  color: #222;
 }
 /* Adopt font-size by screen width */
 @media screen {
   html {
-    font-size: calc(14px + (20 - 16) * (100vw - 350px) / (1100 - 350));
+    font-size: calc(14px + (18 - 16) * (100vw - 350px) / (1100 - 350));
   }
 }
 body {
   background-color: #fcfcfc;
-  color: #5a5a5a;
+  color: #222;
   font-weight: 300;
   line-height: 1.45 /* fallback value. */;
-  line-height: calc(1.3em + (1.35 - 1.3) * ((100vw - 21em) / (30 - 21)));
+  line-height: calc(1.2em + (1.35 - 1.3) * ((100vw - 21em) / (30 - 21)));
   font-size: 1.1rem;
   opacity: 1;
   transition: 1s opacity;
@@ -73,53 +74,58 @@ body.fade-out {
   transition: none;
 }
 h1 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
-  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: 500;
 }
 h2 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 2rem;
+  font-weight: 500;
   font-size: 1.4rem;
 }
 h3 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 2rem;
+  font-weight: 500;
   font-size: 1.2rem;
 }
 h4 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 2rem;
+  font-weight: 500;
   font-size: 1rem;
 }
 h5 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 2rem;
+  font-weight: 500;
   font-size: 0.9rem;
 }
 h6 {
-  color: #666;
+  color: #333;
   margin-bottom: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 2rem;
+  font-weight: 500;
   font-size: 0.8rem;
 }
 code {
   border: 0;
   color: #900;
   background-color: #f1f1f1;
-  font-size: 0.85rem;
+  font-size: 1rem;
   padding: 0.1rem 0.3rem;
   hyphens: none;
 }
 pre {
   color: #900;
   background-color: #f1f1f1;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 6px #555;
@@ -127,7 +133,7 @@ pre {
 pre > code {
   margin: 0;
   color: #900;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   padding: 0.2rem 0.5rem;
   white-space: pre-wrap !important;
 }
@@ -221,7 +227,6 @@ nav ul li a.button span.text {
 }
 .container {
   padding: 0;
-  width: 98%;
 }
 header#main {
   margin: 1rem 0 2rem 0;
@@ -260,7 +265,7 @@ ul.post-list .post-item .post-title {
   margin-bottom: 0.5rem;
 }
 ul.post-list .post-item .post-title a {
-  color: #666;
+  color: #333;
   transition: all 250ms ease-out;
 }
 ul.post-list .post-item .post-title a:hover {
@@ -279,6 +284,7 @@ ul.post-list hr.list-break {
   text-align: center;
 }
 header#title-container h1.page-heading {
+  margin-top: 0.5rem;
   font-size: 1.7rem;
 }
 header#title-container .taxonomy {
@@ -292,39 +298,35 @@ header#title-container .taxonomy .button {
   text-transform: capitalize;
   white-space: nowrap !important;
   font-weight: 400;
-  height: 1.2rem;
+  height: 1.5rem;
   line-height: 1.2rem;
   padding-left: 10px;
   padding-right: 10px;
 }
-section.table-of-contents {
+section.sidebar {
   text-transform: capitalize;
   margin-bottom: 20px !important;
   margin-top: 10px !important;
   height: 80%;
 }
-section.table-of-contents header {
+section.sidebar header {
   font-weight: bold;
   font-size: 1.1rem;
   display: block;
   background-color: #ddd;
-  color: #5a5a5a;
+  color: #222;
   box-shadow: 0 0 6px #555;
-  padding-left: 1%;
-  padding-top: 1%;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 10px;
 }
-section.table-of-contents hr {
+section.sidebar hr {
   border-top: 3px solid #ddd !important;
   margin: 0 !important;
-}
-section.table-of-contents hr.top {
-  margin-bottom: 10px !important;
-}
-section.table-of-contents hr.bottom {
   margin-top: 10px !important;
 }
 nav#TableOfContents {
-  height: 100%;
+  max-height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -350,7 +352,7 @@ nav#TableOfContents ul li {
 nav#TableOfContents ul li a {
   display: block;
   text-decoration: none !important;
-  color: #666;
+  color: #333;
   padding-left: 100%;
   margin-left: -100%;
   transition: all 250ms ease-out;
@@ -419,7 +421,7 @@ footer nav ul {
 }
 footer nav ul li a {
   font-size: 0.7rem;
-  color: #666;
+  color: #5a5a5a;
   transition: all 250ms ease-out;
 }
 footer nav ul li a:hover {
@@ -509,12 +511,11 @@ footer #copyright {
   }
   .container {
     width: 95% !important;
-/* contract the content a bit */
   }
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  .table-of-contents {
+  .sidebar {
     float: right !important;
     width: 20vw !important;
     margin-right: 1em !important;
