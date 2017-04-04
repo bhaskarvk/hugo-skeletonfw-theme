@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fixeds on Hugo Skeleton F/W Theme</title>
-    <link>http://localhost:1313/hugo-skeletonfw-theme/fixed/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/fixed/index.xml</link>
     <description>Recent content in Fixeds on Hugo Skeleton F/W Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
     <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/hugo-skeletonfw-theme/fixed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/fixed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About Hugo</title>
-      <link>http://localhost:1313/hugo-skeletonfw-theme/about-hugo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/about-hugo/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/hugo-skeletonfw-theme/about-hugo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/about-hugo/</guid>
       <description>
 
 &lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;

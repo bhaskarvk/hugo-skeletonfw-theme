@@ -78,6 +78,7 @@ h1 {
   margin-bottom: 0.5rem;
   margin-top: 2rem;
   font-weight: 500;
+  font-size: 2rem;
 }
 h2 {
   color: #333;
@@ -163,7 +164,7 @@ blockquote footer cite:before {
 /* ==== Hugo Theme Components ==== */
 /* ---- buttons ---- */
 .button {
-  height: 2rem;
+  height: 2.1rem;
   margin-bottom: 0;
   line-height: 2rem;
   padding: 0 1rem;
@@ -313,15 +314,15 @@ section.sidebar header {
   font-weight: bold;
   font-size: 1.1rem;
   display: block;
-  background-color: #ddd;
-  color: #222;
+  background-color: #222;
+  color: #fcfcfc;
   box-shadow: 0 0 6px #555;
   text-align: center;
   padding: 2px;
   margin-bottom: 10px;
 }
 section.sidebar hr {
-  border-top: 3px solid #ddd !important;
+  border-top: 3px solid #222 !important;
   margin: 0 !important;
   margin-top: 10px !important;
 }
@@ -335,7 +336,7 @@ nav#TableOfContents ul {
   margin: 0;
   list-style: none !important;
   font-size: 0.9rem;
-  line-height: 1.2rem;
+  line-height: 1.23rem;
 }
 nav#TableOfContents ul ul {
   font-size: 0.85rem;

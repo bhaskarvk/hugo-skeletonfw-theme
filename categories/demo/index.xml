@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Demo on Hugo Skeleton F/W Theme</title>
-    <link>http://localhost:1313/hugo-skeletonfw-theme/categories/demo/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/demo/index.xml</link>
     <description>Recent content in Demo on Hugo Skeleton F/W Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
-    <atom:link href="http://localhost:1313/hugo-skeletonfw-theme/categories/demo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/categories/demo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Alerts Demo</title>
-      <link>http://localhost:1313/hugo-skeletonfw-theme/2017/03/alerts-demo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/alerts-demo/</link>
       <pubDate>Tue, 21 Mar 2017 17:22:50 -0400</pubDate>
       
-      <guid>http://localhost:1313/hugo-skeletonfw-theme/2017/03/alerts-demo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/alerts-demo/</guid>
       <description>
 
 &lt;h1 id=&#34;demo-of-all-the-alerts&#34;&gt;Demo of all the Alerts&lt;/h1&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>Tabs Demo</title>
-      <link>http://localhost:1313/hugo-skeletonfw-theme/2017/03/tabs-demo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/tabs-demo/</link>
       <pubDate>Tue, 21 Mar 2017 16:56:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/hugo-skeletonfw-theme/2017/03/tabs-demo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2017/03/tabs-demo/</guid>
       <description>&lt;ul class=&#34;tab-nav&#34;&gt;
   &lt;li&gt;
     &lt;a class=&#34;button active&#34; href=&#34;#one&#34;&gt;Tab 1&lt;/a&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Hugo Skeleton F/W Theme</title>
-    <link>http://localhost:1313/hugo-skeletonfw-theme/tags/hugo/index.xml</link>
+    <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on Hugo Skeleton F/W Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>© 2017 All rights reserved.</copyright>
-    <atom:link href="http://localhost:1313/hugo-skeletonfw-theme/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bhaskarvk.github.io/hugo-skeletonfw-theme/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Creating a New Theme</title>
-      <link>http://localhost:1313/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/09/creating-a-new-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -1113,10 +1113,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>http://localhost:1313/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
+      <link>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
+      <guid>https://bhaskarvk.github.io/hugo-skeletonfw-theme/2014/04/getting-started-with-hugo/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-getting-started&#34;&gt;Hugo: Getting Started&lt;/h1&gt;
@@ -1128,7 +1128,7 @@ appropriate version for your os and architecture.&lt;/p&gt;
 
 &lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
 
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;http://localhost:1313/hugo-skeletonfw-theme/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://bhaskarvk.github.io/hugo-skeletonfw-theme/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;
 
