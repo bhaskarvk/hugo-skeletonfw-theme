@@ -406,10 +406,7 @@ section.page-content h1 {
 }
 section.page-content p {
   margin-bottom: 1rem;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+  hyphens: none;
 }
 section.page-content ol,
 section.page-content ul {
@@ -419,10 +416,7 @@ section.page-content ul {
 section.page-content ol li,
 section.page-content ul li {
   margin-bottom: 5px;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+  hyphens: none;
 }
 section.page-content ol li pre,
 section.page-content ul li pre {
@@ -452,11 +446,7 @@ section.page-content ul li ul {
   margin-bottom: 0px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  max-width: 75%;
-  min-width: 50%;
-  white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
+  width: 80%;
 }
 footer nav ul {
   padding: 1rem 0.5rem 0 0.5rem;

@@ -28,13 +28,17 @@ This theme provides...
 
 ## Screenshots
 
-### Structure of `index.html`
+### Structure of Home Page
 
-![](images/homepage.svg)
+![](images/theme-home-structure.png)
 
-### `index.html`
+### Home Page
 
-![](images/homepage2.svg)
+![](images/theme-home.png)
+
+### Post
+
+![](images/theme-page.png)
 
 ## Develop
 
