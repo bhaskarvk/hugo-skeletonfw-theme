@@ -81,6 +81,8 @@ html
     font-size: calc(14px + (18 - 16) * (100vw - 350px) / (1100 - 350))
 
 body
+  max-width: 90%
+  margin: auto
   background-color: bg_color
   color: fg_color
   font-weight: fw_def
@@ -167,6 +169,10 @@ blockquote
     cite:before
       content: "— "
 
+main.content
+  padding-left: 1rem
+  padding-bottom: 1rem
+
 /* ==== Hugo Theme Components ==== */
 /* ---- buttons ---- */
 .button
@@ -179,7 +185,7 @@ blockquote
   background-color: button_bg_color
   border: button_border
   box-shadow: 0 0 0 button_border_color
-  transition: all 250ms ease-out;
+  transition: all 250ms ease-out
   &:hover
     color: button_hover_fg_color
     background-color: button_hover_bg_color
@@ -199,7 +205,7 @@ blockquote
   color: button_hover_fg_color
   border: button_hover_border
   box-shadow: 0 0 0 1px button_hover_border_color
-  transition: all 250ms ease-out;
+  transition: all 250ms ease-out
   &:hover
     color: primary_button_hover_fg_color
     background-color: button_hover_bg_color
@@ -229,7 +235,8 @@ nav
 
 
 .container
-  padding: 0
+  max-width: 100%
+  padding: 0.25rem
 
 header#main
   margin: 1rem 0 2rem 0
@@ -266,7 +273,7 @@ ul.post-list
         margin-bottom: 0.5rem
         a
           color: header_color
-          transition: all 250ms ease-out;
+          transition: all 250ms ease-out
           &:hover
             color: link_hover_color
     .summary
@@ -301,8 +308,8 @@ header#title-container
 section.sidebar
   text-transform: capitalize
   margin-bottom: 20px !important
-  margin-top: 10px !important
-  height: 80%
+  margin-top: 15px !important
+  height: 60%
   header
     font-weight: bold
     font-size: fs_body
@@ -310,9 +317,9 @@ section.sidebar
     background-color: toc_header_bg
     color: toc_header_color
     box-shadow: 0 0 6px box_shadow_color
-    text-align: center;
-    padding: 2px;
-    margin-bottom: 10px;
+    text-align: center
+    padding: 2px 10px 2px
+    margin-bottom: 10px
   hr
     border-top: 3px solid toc_header_bg !important
     margin: 0 !important
@@ -343,15 +350,34 @@ nav#TableOfContents
         color: toc_link_color
         padding-left: 100%
         margin-left: -100%
-        transition: all 250ms ease-out;
+        transition: all 250ms ease-out
         &:hover
           background-color: alpha(toc_hover_bg_color,.80)
           color: toc_hover_fg_color
+          code
+            color: toc_hover_fg_color
         &:active,
         &.active
           background-color: toc_hover_bg_color
           color: toc_hover_fg_color
           box-shadow: 0 0 6px box_shadow_color
+          code
+            color: toc_hover_fg_color
+        code
+          color: fg_color
+          background-color: rgba(0,0,0,0)
+          padding: 0
+          font-size: 0.9rem
+
+nav#TableOfContents > ul
+  padding 5px 10px
+nav#TableOfContents::-webkit-scrollbar-track
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.3)
+nav#TableOfContents::-webkit-scrollbar
+  width: 1px
+nav#TableOfContents::-webkit-scrollbar-thumb
+  background-color: #000000
+  width: 3px
 
 section.page-content
   h1
@@ -362,8 +388,8 @@ section.page-content
     -moz-hyphens: auto
     -ms-hyphens: auto
     hyphens: auto
-  ul
-    margin-bottom: 2px
+  ol, ul
+    //margin-bottom: 2px
     list-style-position: outside
     padding-left: 1rem
     li
@@ -384,27 +410,33 @@ section.page-content
 .pagination
   ul
     display: flex
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.5rem
+    padding-right: 0.5rem
     li
       margin-right: 0.25rem
       margin-left: 0.25rem
       padding: 0
       .button
-        margin-bottom: 0px;
-        padding-left: .5rem;
-        padding-right: .5rem;
+        margin-bottom: 0px
+        padding-left: .5rem
+        padding-right: .5rem
+        max-width: 75%
+        min-width:50%
+        white-space: nowrap
+        overflow-x: hidden
+        text-overflow: ellipsis
+
 
 footer
   nav
     ul
-      padding: 1rem 0.5rem 0 0.5rem;
-      margin-bottom: 0;
+      padding: 1rem 0.5rem 0 0.5rem
+      margin-bottom: 0
       li
         a
           font-size: fs_icons
           color: icons_color
-          transition: all 250ms ease-out;
+          transition: all 250ms ease-out
           &:hover
             color: icons_hover_color
   #copyright
@@ -434,7 +466,7 @@ footer
   /* Hidden on mobile devices */
   position: fixed !important
   bottom: 0px !important
-  right: 12px !important
+  right: 30px !important
   padding: 0px !important
   font-size: 0.8rem !important
   color: link_color !important
@@ -491,19 +523,9 @@ footer
       span.text
         display: inline !important
 
-  .container
-    width: cw_wide1 !important
-
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px)
+
   .sidebar
     float: right !important
-    width: 20vw !important
-    margin-right: 1em !important
     position: fixed !important
-    left: 76vw !important
-    top: 165px
-
-  .container
-    width: 70vw !important
-    margin-right: 25vw !important

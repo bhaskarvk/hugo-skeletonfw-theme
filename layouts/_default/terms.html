@@ -2,47 +2,56 @@
 <main class="row content">
     <section class="columns twelve">
         <section id="toc" class="sidebar">
-            <header>{{ .Title }}</header>
+            <header>
+                {{ .Title }}
+                <span class="u-pull-right">
+                    <i id="toggleTOC" class="fa fa-angle-double-up"></i>
+                </span>
+            </header>
             <nav id="TableOfContents">
-            <ul>
-                {{ range $key,$value := .Data.Terms.ByCount }}
-                {{ if ge $value.Count 2 }}
-                <li>
-                    <a href="#{{ $value.Name }}">{{ $value.Name }} - {{ $value.Count }} Posts</a>
-                </li>
-                {{ end }}
-                {{ end }}
-                <li><a href="#others">Others</a></li>
-            </ul>
+                <ul>
+                    {{ range $key,$value := .Data.Terms.ByCount }}
+                    {{ if ge $value.Count 2 }}
+                    <li>
+                        <a href="#{{ $value.Name }}">
+                            {{ $value.Name }} - {{ $value.Count }} Posts
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                    <li><a href="#others">Others</a></li>
+                </ul>
             </nav>
             <hr/>
         </section>
-         <section class="page-content">
+        <section class="page-content">
             {{ $data := .Data }}
             {{ range $key,$value := .Data.Terms.ByCount }}
-                {{ if ge $value.Count 2 }}
-                <article>
-                    <header><h3 id="{{ $value.Name }}" >
+            {{ if ge $value.Count 2 }}
+            <article>
+                <header>
+                    <h3 id="{{ $value.Name }}">
                         <a href="{{ $value.Name | urlize }}" style="text-transform: capitalize">{{ $value.Name }}</a> {{ $value.Count }} Posts
-                    </h3></hdeader>
-                    <ul>
+                    </h3>
+                </hdeader>
+                <ul>
                     {{ range ($value.Pages.ByDate).Reverse }}
                     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                     {{ end }}
-                    </ul>
-                </article>
-                <hr/>
-                {{ end }}
+                </ul>
+            </article>
+            <hr/>
+            {{ end }}
             {{ end }}
             <article>
-            <header><h3 id="others" >Others</h3></header>
+                <header><h3 id="others" >Others</h3></header>
                 <ul>
                     {{ range $key,$value := .Data.Terms.ByCount }}
-                        {{ if lt $value.Count 2 }}
-                            {{ range $value.Pages.ByDate }}
-                            <li><span style="text-transform: capitalize;font-weight:400">{{ $value.Name }}</span>: <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                            {{ end }}
-                        {{ end }}
+                    {{ if lt $value.Count 2 }}
+                    {{ range $value.Pages.ByDate }}
+                    <li><span style="text-transform: capitalize;font-weight:400">{{ $value.Name }}</span>: <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                    {{ end }}
                     {{ end }}
                 </ul>
             </article>
