@@ -8,6 +8,28 @@ $('#back-to-top').click(function() {
     }, 500);
 });
 
+// allows toggling of TOC
+if($('#toggleTOC').length) {
+    $('#toggleTOC').click(function() {
+       $('#TableOfContents').toggle(500);
+       $('.sidebar hr').toggle(500);
+       $('#toggleTOC').toggleClass('fa-rotate-180',500);
+    });
+}
+
+// Rearrange toc and content on a wider page
+function reorgPage() {
+  $('section.page-content').width('74%');
+  $('header#title-container').width('74%');
+  $('.sidebar').css({"left":"71%", "width": "20%"});
+}
+
+// Reset TOC and contents on a narrower page
+function resetPage() {
+  $('section.page-content').width('');
+  $('header#title-container').width('');
+  $('.sidebar').css({"left":"", "width": ""});
+}
 
 $(document).ready(function() {
 
@@ -16,6 +38,11 @@ $(document).ready(function() {
 
     var scrollTop = $(window).scrollTop();
     var mainTop = $("main").offset().top;
+
+    // Condense the body on a wide page
+    if($(window).width() >= widthThreshold1) {
+        $('body').width('85%');
+    }
 
     // Do we have a sidebar?
     if($('.sidebar').length) {
@@ -26,11 +53,12 @@ $(document).ready(function() {
             // Have we scrolled passed the main Content
             if(scrollTop <= mainTop) {
                 // If not set sidebar's height = main Content's height
-                $('.sidebar').offset({top : mainTop + 2, left: tocLeft});
+                $('.sidebar').offset({top : mainTop + 30, left: tocLeft});
             } else {
                 // Else set sidebar's height = Scroll Top + 5px
-                $('.sidebar').offset({top : scrollTop + 5 , left: tocLeft});
+                $('.sidebar').offset({top : scrollTop + 30 , left: tocLeft});
             }
+            reorgPage(); // rearrange TOC & contents
         }
     }
 
@@ -57,15 +85,27 @@ $(document).ready(function() {
 
     // recalculate sidebar position on resizing
     $(window).resize(function() {
-        // Do we have a sidebar and is it floating on the side?
-        if ($('.sidebar').length && $(window).width() >= widthThreshold1) {
-            var scrollTop = $(window).scrollTop();
-            var mainTop = $("main").offset().top;
-            var tocLeft = $(".sidebar").offset().left;
 
-            // If we have not scrolled passed the main content?
-            if (scrollTop <= mainTop) {
-                $('.sidebar').offset({ top: mainTop + 2, left: tocLeft });
+        // recalculate body width based on window width
+        if($(window).width() >= widthThreshold1) {
+            $('body').width('85%');
+        } else {
+            $('body').width('90%');
+        }
+        // Do we have a sidebar and is it floating on the side?
+        if ($('.sidebar').length) {
+            if ($(window).width() >= widthThreshold1) {
+                var scrollTop = $(window).scrollTop();
+                var mainTop = $("main").offset().top;
+                var tocLeft = $(".sidebar").offset().left;
+
+                // If we have not scrolled passed the main content?
+                if (scrollTop <= mainTop) {
+                    $('.sidebar').offset({ top: mainTop + 30, left: tocLeft });
+                }
+                reorgPage(); // rearrange TOC & contents
+            } else { // is the sidebar inline
+                resetPage(); // reset TOC and contents
             }
         }
     });
@@ -91,10 +131,10 @@ $(document).ready(function() {
             // Have we scrolled passed the main Content
             if(scrollTop <= mainTop) {
                 // If not set sidebar's height = main Content's height
-                $('.sidebar').offset({top : mainTop + 2 , left: tocLeft});
+                $('.sidebar').offset({top : mainTop + 30 , left: tocLeft});
             } else {
                 // Else set sidebar's height = Scroll Top + 5px
-                $('.sidebar').offset({top : scrollTop + 5 , left: tocLeft});
+                $('.sidebar').offset({top : scrollTop + 30 , left: tocLeft});
             }
 
             // $currentSection is somewhere to place the section we must be looking at

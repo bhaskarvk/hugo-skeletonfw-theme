@@ -60,6 +60,8 @@ html {
   }
 }
 body {
+  max-width: 90%;
+  margin: auto;
   background-color: #fcfcfc;
   color: #222;
   font-weight: 300;
@@ -161,6 +163,10 @@ blockquote {
 blockquote footer cite:before {
   content: "— ";
 }
+main.content {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
 /* ==== Hugo Theme Components ==== */
 /* ---- buttons ---- */
 .button {
@@ -227,7 +233,8 @@ nav ul li a.button span.text {
   display: none;
 }
 .container {
-  padding: 0;
+  max-width: 100%;
+  padding: 0.25rem;
 }
 header#main {
   margin: 1rem 0 2rem 0;
@@ -307,8 +314,8 @@ header#title-container .taxonomy .button {
 section.sidebar {
   text-transform: capitalize;
   margin-bottom: 20px !important;
-  margin-top: 10px !important;
-  height: 80%;
+  margin-top: 15px !important;
+  height: 60%;
 }
 section.sidebar header {
   font-weight: bold;
@@ -318,7 +325,7 @@ section.sidebar header {
   color: #fcfcfc;
   box-shadow: 0 0 6px #555;
   text-align: center;
-  padding: 2px;
+  padding: 2px 10px 2px;
   margin-bottom: 10px;
 }
 section.sidebar hr {
@@ -362,11 +369,37 @@ nav#TableOfContents ul li a:hover {
   background-color: rgba(30,174,219,0.8);
   color: #fcfcfc;
 }
+nav#TableOfContents ul li a:hover code {
+  color: #fcfcfc;
+}
 nav#TableOfContents ul li a:active,
 nav#TableOfContents ul li a.active {
   background-color: #1eaedb;
   color: #fcfcfc;
   box-shadow: 0 0 6px #555;
+}
+nav#TableOfContents ul li a:active code,
+nav#TableOfContents ul li a.active code {
+  color: #fcfcfc;
+}
+nav#TableOfContents ul li a code {
+  color: #222;
+  background-color: rgba(0,0,0,0);
+  padding: 0;
+  font-size: 0.9rem;
+}
+nav#TableOfContents > ul {
+  padding: 5px 10px;
+}
+nav#TableOfContents::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+}
+nav#TableOfContents::-webkit-scrollbar {
+  width: 1px;
+}
+nav#TableOfContents::-webkit-scrollbar-thumb {
+  background-color: #000;
+  width: 3px;
 }
 section.page-content h1 {
   font-size: 1.6rem;
@@ -378,11 +411,12 @@ section.page-content p {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+section.page-content ol,
 section.page-content ul {
-  margin-bottom: 2px;
   list-style-position: outside;
   padding-left: 1rem;
 }
+section.page-content ol li,
 section.page-content ul li {
   margin-bottom: 5px;
   -webkit-hyphens: auto;
@@ -390,13 +424,16 @@ section.page-content ul li {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+section.page-content ol li pre,
 section.page-content ul li pre {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
+section.page-content ol li p,
 section.page-content ul li p {
   display: inline;
 }
+section.page-content ol li ul,
 section.page-content ul li ul {
   margin: 5px;
   font-size: 95%;
@@ -415,6 +452,11 @@ section.page-content ul li ul {
   margin-bottom: 0px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  max-width: 75%;
+  min-width: 50%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 footer nav ul {
   padding: 1rem 0.5rem 0 0.5rem;
@@ -453,7 +495,7 @@ footer #copyright {
 /* Hidden on mobile devices */
   position: fixed !important;
   bottom: 0px !important;
-  right: 12px !important;
+  right: 30px !important;
   padding: 0px !important;
   font-size: 0.8rem !important;
   color: #1eaedb !important;
@@ -510,22 +552,11 @@ footer #copyright {
   .pager a.button span.text {
     display: inline !important;
   }
-  .container {
-    width: 95% !important;
-  }
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
   .sidebar {
     float: right !important;
-    width: 20vw !important;
-    margin-right: 1em !important;
     position: fixed !important;
-    left: 76vw !important;
-    top: 165px;
-  }
-  .container {
-    width: 70vw !important;
-    margin-right: 25vw !important;
   }
 }

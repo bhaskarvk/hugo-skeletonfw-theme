@@ -10,12 +10,18 @@ ul.tab-nav li a.button {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   margin-bottom: -1px;
+  border: 1px solid #bbb;
+  color: #ddd;
+}
+ul.tab-nav li a.button:hover {
+  box-shadow: 0 0 0;
+  color: #555;
+  background-color: #fcfcfc;
 }
 ul.tab-nav li a.active.button {
   border-bottom: 1px solid #fff;
-}
-ul.tab-nav li a.active.button:hover {
-  border-bottom: none;
+  color: #333;
+  pointer-events: none;
 }
 .tab-content .tab-pane {
   display: none;
