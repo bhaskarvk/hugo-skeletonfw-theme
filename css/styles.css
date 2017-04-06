@@ -231,6 +231,7 @@ nav ul li {
 }
 nav ul li a.button span.text {
   display: none;
+  letter-spacing: normal;
 }
 .container {
   max-width: 100%;
