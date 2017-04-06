@@ -1,37 +1,50 @@
-var widthThreshold1 = 992;
-var widthThreshold2 = 750;
+var widthThreshold1 = 750;
+var widthThreshold2 = 992;
+
+var bodyWidthDefault = '99%';
+var bodyWidthThreshold1 = '95%';
+var bodyWidthThreshold2 = '90%';
+var bodyWoSidebarWidthThreshold2 = '70%';
+
+var mainContentWidthThreshold2 = '74%';
+var sidebarWidthThreshold2 = '20%';
+var sidebarLeftThreshold2 = '73%';
+
+var tocOffset = 30;
+
+var defAnimationTime = 500;
 
 // smooth scroll to top when back-to-top button is clicked
-$('#back-to-top').click(function() {
+$('#back-to-top').click(function () {
     $('body,html').animate({
-        scrollTop : 0
-    }, 500);
+        scrollTop: 0
+    }, defAnimationTime);
 });
 
 // allows toggling of TOC
-if($('#toggleTOC').length) {
-    $('#toggleTOC').click(function() {
-       $('#TableOfContents').toggle(500);
-       $('.sidebar hr').toggle(500);
-       $('#toggleTOC').toggleClass('fa-rotate-180',500);
+if ($('#toggleTOC').length) {
+    $('#toggleTOC').click(function () {
+        $('#TableOfContents').toggle(defAnimationTime);
+        $('.sidebar hr').toggle(defAnimationTime);
+        $('#toggleTOC').toggleClass('fa-rotate-180', defAnimationTime);
     });
 }
 
 // Rearrange toc and content on a wider page
-function reorgPage() {
-  $('section.page-content').width('74%');
-  $('header#title-container').width('74%');
-  $('.sidebar').css({"left":"71%", "width": "20%"});
+function reorgPage () {
+    $('section.page-content').width(mainContentWidthThreshold2);
+    $('header#title-container').width(mainContentWidthThreshold2);
+    $('.sidebar').css({ 'left': sidebarLeftThreshold2, 'width': sidebarWidthThreshold2 });
 }
 
 // Reset TOC and contents on a narrower page
 function resetPage() {
-  $('section.page-content').width('');
-  $('header#title-container').width('');
-  $('.sidebar').css({"left":"", "width": ""});
+    $('section.page-content').width('');
+    $('header#title-container').width('');
+    $('.sidebar').css({'left': '', 'width':  ''});
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     // $sections includes all of the container divs that relate to menu items.
     var $sections = $('.page-content :header');
@@ -40,25 +53,30 @@ $(document).ready(function() {
     var mainTop = $("main").offset().top;
 
     // Condense the body on a wide page
-    if($(window).width() >= widthThreshold1) {
-        $('body').width('85%');
+    if ($(window).width() >= widthThreshold2) {
+        if ($('.sidebar').length) {
+            $('body').width(bodyWidthThreshold2);
+        } else {
+            $('body').width(bodyWoSidebarWidthThreshold2);
+        }
+    } else if ($(window).width() >= widthThreshold1) {
+        $('body').width(bodyWidthThreshold1);
     }
 
     // Do we have a sidebar?
-    if($('.sidebar').length) {
-        var tocLeft = $(".sidebar").offset().left;
-
+    if ($('.sidebar').length) {
         // Is the sidebar floating on the side?
-        if($(window).width() >= widthThreshold1) {
-            // Have we scrolled passed the main Content
-            if(scrollTop <= mainTop) {
-                // If not set sidebar's height = main Content's height
-                $('.sidebar').offset({top : mainTop + 30, left: tocLeft});
-            } else {
-                // Else set sidebar's height = Scroll Top + 5px
-                $('.sidebar').offset({top : scrollTop + 30 , left: tocLeft});
-            }
+        if ($(window).width() >= widthThreshold2) {
             reorgPage(); // rearrange TOC & contents
+
+            // Have we scrolled passed the main Content
+            if (scrollTop <= mainTop) {
+                // If not set sidebar's height = main Content's height + offset
+                $('.sidebar').offset({ top: mainTop + tocOffset, left: sidebarLeftThreshold2 });
+            } else {
+                // Else set sidebar's height = Scroll Top + offset
+                $('.sidebar').offset({ top: scrollTop + tocOffset, left: sidebarLeftThreshold2 });
+            }
         }
     }
 
@@ -76,7 +94,7 @@ $(document).ready(function() {
                 if (target.length) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
-                    },1500);
+                    }, 1500);
                     return false;
                 }
             }
@@ -84,39 +102,44 @@ $(document).ready(function() {
     });
 
     // recalculate sidebar position on resizing
-    $(window).resize(function() {
+    $(window).resize(function () {
 
         // recalculate body width based on window width
-        if($(window).width() >= widthThreshold1) {
-            $('body').width('85%');
+        if ($(window).width() >= widthThreshold2) {
+            if ($('.sidebar').length) {
+                $('body').width(bodyWidthThreshold2);
+            } else {
+                $('body').width(bodyWoSidebarWidthThreshold2);
+            }
+        } else if ($(window).width() >= widthThreshold1) {
+            $('body').width(bodyWidthThreshold1);
         } else {
-            $('body').width('90%');
+            $('body').width(bodyWidthDefault);
         }
         // Do we have a sidebar and is it floating on the side?
         if ($('.sidebar').length) {
-            if ($(window).width() >= widthThreshold1) {
+            if ($(window).width() >= widthThreshold2) {
+                reorgPage(); // rearrange sidebar & contents
                 var scrollTop = $(window).scrollTop();
                 var mainTop = $("main").offset().top;
-                var tocLeft = $(".sidebar").offset().left;
 
                 // If we have not scrolled passed the main content?
                 if (scrollTop <= mainTop) {
-                    $('.sidebar').offset({ top: mainTop + 30, left: tocLeft });
+                    $('.sidebar').offset({ top: mainTop + tocOffset, left: sidebarLeftThreshold2 });
                 }
-                reorgPage(); // rearrange TOC & contents
             } else { // is the sidebar inline
-                resetPage(); // reset TOC and contents
+                resetPage(); // reset sidebar and contents
             }
         }
     });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
 
         var scrollTop = $(window).scrollTop();
         var mainTop = $("main").offset().top;
 
         // show/hide back-to-top button on scroll
-        if($(window).width() >= widthThreshold2) {
+        if ($(window).width() >= widthThreshold1) {
             if (scrollTop >= mainTop) {
                 $('#back-to-top').fadeIn(50); // Fade in the arrow
             } else {
@@ -125,16 +148,15 @@ $(document).ready(function() {
         }
 
         // Do we have a sidebar and is it floating on the side?
-        if($('.sidebar').length && $(window).width() >= widthThreshold1) {
+        if ($('.sidebar').length && $(window).width() >= widthThreshold2) {
 
-            var tocLeft = $(".sidebar").offset().left;
             // Have we scrolled passed the main Content
-            if(scrollTop <= mainTop) {
-                // If not set sidebar's height = main Content's height
-                $('.sidebar').offset({top : mainTop + 30 , left: tocLeft});
+            if (scrollTop <= mainTop) {
+                // If not set sidebar's height = main Content's height + offset
+                $('.sidebar').offset({ top: mainTop + tocOffset, left: sidebarLeftThreshold2 });
             } else {
-                // Else set sidebar's height = Scroll Top + 5px
-                $('.sidebar').offset({top : scrollTop + 30 , left: tocLeft});
+                // Else set sidebar's height = Scroll Top + offset
+                $('.sidebar').offset({ top: scrollTop + tocOffset, left: sidebarLeftThreshold2 });
             }
 
             // $currentSection is somewhere to place the section we must be looking at
