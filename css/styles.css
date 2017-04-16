@@ -416,7 +416,7 @@ section.page-content ul {
 }
 section.page-content ol li,
 section.page-content ul li {
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
   hyphens: none;
 }
 section.page-content ol li pre,
